@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011 BreizhJUG
+  
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Affero General Public License as
+      published by the Free Software Foundation, either version 3 of the
+      License, or (at your option) any later version.
+  
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU Affero General Public License for more details.
+  
+      You should have received a copy of the GNU Affero General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<event>
+	<name>BreizhCamp - 17/06/2011</name>
+	<speakers>
+		<speaker id="sdouche">
+			<name>Sébastien Douche</name>
+			<pictureUrl>http://confoo.ca/images/speakers/2011/sebastien-douche.jpg</pictureUrl>
+			<description>Développeur amateur depuis 84, utilisateur de logiciel libre depuis 95, Sébastien Douche est un vieux Geek. Fainéant par nature, il est à la recherche constante de tout moyen pour faire mieux avec moins d'effort. Professionnellement, il occupe les postes de directeur technique et de responsable R&amp;D chez un éditeur Français, se permettant d'assouvir ses passions pour le coaching technique et la gestion d'organisation.</description>
+		</speaker>
+		<speaker id="sdiaz">
+			<name>Salvador Diaz</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1300280676061/programme/applications-mobiles-avec-gwt/salvador.JPG</pictureUrl>
+			<description>Diplômé de l’École des Mines de Nantes, Salvador Diaz intègre Sfeir en 2007 et travaille depuis sur des projets innovants avec des technologies Google (GWT, App Engine, Wave) et des méthodologies Agiles. Il participe également au tour de France des JUGs avec Didier Girard fin 2009, à la conférence LeWeb 2009 avec Patrick Chanezon (Google), à Devoxx 2010 (Quicky GWT) et à la conférence GET EFREI 2010.</description>
+		</speaker>
+		<speaker id="nledez">
+			<name>Nicolas Ledez</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1302699797947/speakers/IMGP1910.jpg</pictureUrl>
+			<description>Nicolas Ledez est chef de projet chez Néo-Soft. De formation industrielle puis informatique, il travaille dans l'IT depuis 10 ans. Il anime également Rennes On Rails et le forum Grafotech "Cloud". Ses développements sont réalisés dans le cadre de ses missions pour automatiser ses tâches rébarbatives. Il code en Ruby principalement le soir et le week-end (le pauvre fait du VBA en semaine). Vous pouvez également le retrouver sur son blog http://blog.ledez.net.</description>
+		</speaker>
+		<speaker id="omallassi">
+			<name>Olivier Mallassi</name>
+			<pictureUrl>http://www.parisjug.org/xwiki/bin/download/Speaker/OlivierMallassi/olivierMallassi2.jpg</pictureUrl>
+			<description>Olivier Mallassi est architecte senior chez OCTO où il intervient dans une grande variété de projets en tant qu’architecte, expert ou encore auditeur, et ce principalement pour des clients banque/assurance. Outre ces domaines d’expertises historiques tels que les technologies Java/JEE (dont il est membre actif), Olivier est passionné par les architectures des grands du web, hautement scalables, évènementielles ainsi que les technologies dites noSql.</description>
+		</speaker>
+		<speaker id="ffadel">
+			<name>Frédéric Fadel</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1302699708110/speakers/Fredy%202.JPG</pictureUrl>
+			<description>Frédéric Fadel est fondateur d'Aspectize, un éditeur de logiciel innovant qui propose l' "Architecture as a Service" qui permet de réduire considérablement le volume de code à écrire et permet au développeur de se concentrer sur la valeur métier des projets. Il a une solide expérience de 25 ans dans l’informatique et une expertise reconnue sur les technologies Microsoft. Premier certifié en France sur Windows NT en 1994, co-fondateur de Winwise en 1996, un des premiers formateurs certifiés sur la plate-forme .NET, il a animé à de nombreuses reprises les séminaires Microsoft, conseillé et formé de nombreuses équipes sur les bonnes pratiques de l’Architecture logicielle, sujet sur lequel il a développé une approche originale « du rigide au souple », promotion de l’architecture souple des systèmes distribués.</description>
+		</speaker>
+		<speaker id="cmottier">
+			<name>Cyril Mottier</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1301233748002/speakers/me.jpg?height=120&amp;width=100</pictureUrl>
+			<description>Cyril Mottier est développeur pour plateformes mobiles avancées (Android, iOS). Passionné par l'informatique en général et particulièrement Android, Cyril s'investit largement dans la communauté par le biais de diverses actions : conception d'applications disponibles sur l'Android Market, rédactions de tutoriaux et d'un blog traitant du développement Android, conception d'une bibliothèque d'aide au développement d'interfaces graphiques GreenDroid, participation en qualité de "speaker" à des évènements en relation avec le système de Google (Android Developer Labs, Droidcon UK 2010, GET EFREI, PAUG, GTUG, etc.), etc.</description>
+		</speaker>
+		<speaker id="tgrall">
+			<name>Tugdual Grall</name>
+			<pictureUrl>http://sites.google.com/site/jugsummercamp/_/rsrc/1274111578490/home/tgrall.png</pictureUrl>
+			<description>Tugdual Grall est responsable de la stratégie produit chez eXo Platform, qu'il a rejoint en Juin 2008. eXo Platform développe une solution open-source de travail collaboratif basée sur JavaEE, et autres standards (JSR-286, JSR-170, Open Social). Ses centres d'intérêts actuels sont les Portails d'Entreprise 2.0, la Gestion de Contenu (Gestion Documentaire, CMS), réseaux sociaux d'entreprise et l'architecture IT. Avant de travailler pour eXo Platform, Tugdual était Principal Product Manager JavaEE et Services Web sur Oracle Fusion Middleware. Tugdual a rejoint Oracle France en Janvier 1999 comme consultant, puis entre 2001 et 2007, Tugdual a travaillé dans l'équipe de développement d'Oracle Application Server comme product manager en Californie au siège d'Oracle Corporation. Tugdual a participé à plusieurs conférences (JavaOne, OracleOpen World, ODTUG, SolutionLinux, JUGs). Il est également le co-fondateur en Juin 2008, du NantesJUG.</description>
+		</speaker>
+		<speaker id="jpgouigoux">
+			<name>Jean-Philippe Gouigoux</name>
+			<pictureUrl>http://jp.gouigoux.free.fr/bouba.png</pictureUrl>
+			<description>Jean-Philippe Gouigoux est responsable du pôle Architecture / Formation / Innovation et membre de l'équipe de direction de MGDIS, éditeur de logiciels basé à Vannes. Après avoir fait ses armes sur Amstrad / Atari ST, il est tombé dans la mécanique pour un diplôme d'ingénieur et un master en robotique (thèse en écologie). Cet égarement fut temporaire, et le voilà revenu à l'informatique, avec une expertise en .NET (Certification MCSD Entreprise Architect, livre sur les performances en .NET en mai 2011, auteur dans Programmez!, blogueur sur DotNet-France). Intéressé par le Green IT côté développement, conférencier à l'Agile Tour, JP est également intervenant régulier à l'Université Bretagne Sud.</description>
+		</speaker>
+		<speaker id="gcollic">
+			<name>Guillaume Collic</name>
+			<pictureUrl>http://guillaumecollic.com/wordpress/wp-content/uploads/2011/05/gcollic.jpg</pictureUrl>
+			<description>Guillaume Collic est un développeur Agiliste passioné, qui a principalement développé sur de gros projets de migration/évolution d'architecture concernant des applications de coeur de métier de grosses sociétés (intérim, location de voiture, banques). Impliqué dans les communautés agiles et .Net de Bretagne (Agile Breizh, Agile Rennes, Alt.Net Rennes, Sharepoint &amp; .Net Ouest). Disponible sur twitter à @gcollic ou sur son blog www.guillaumecollic.com.</description>
+		</speaker>
+		<speaker id="cfalguiere">
+			<name>Claude Falguière</name>
+			<pictureUrl>http://www.lyonjug.org/_/rsrc/1291120173819/speakers/cfalguiere_300_clair.jpg?width=100</pictureUrl>
+			<description>Claude Falguière est Architecte Technique pour la société de conseil Valtech Technology à Paris. Après plusieurs années chez un éditeur de base de données Objet comme consultant et formatrice, elle a intégré Valtech pour participer à plusieurs projets Web J2EE puis s'est spécialisée dans l'évaluation de performance applicative, l'audit et l'optimisation. Elle est membre de l'équipe du Paris JUG et Co-fondatrice de Duchess France. Son site http://cfalguiere.wordpress.com Le site des JDuchess FR http://jduchess.org/duchess-france/</description>
+		</speaker>
+		<speaker id="glormeau">
+			<name>Gildas Lormeau</name>
+		</speaker>
+		<speaker id="ndeloof">
+			<name>Nicolas De loof</name>
+			<pictureUrl>http://sites.google.com/site/jugsummercamp/_/rsrc/1301408912123/home/nicolasdeloof.jpg</pictureUrl>
+			<description>Nicolas De Loof est président du BreizhJUG, dictateur bénévole du BreizhCamp, et développeur opensource sur le peu de temps libre qui lui reste, en particulier pour le projet Apache Maven sur lequel il a rédigé en ouvrage exceptionnel, bientôt réédité. Professionnellement, il est Senior Engineer chez CloudBees, avec 14ans de développement dans ses bagages. Retrouvez-le sur @ndeloof et sur blog.loof.fr</description>
+		</speaker>
+		<speaker id="ngeorgeault">
+			<name>Nicolas Georgeault</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1304413487579/speakers/MyProfil.jpg</pictureUrl>
+			<description>Depuis 1996, Nicolas Georgeault travaille sur les portails et les outils de collaboration. Plus particulièrement sur les usages des réseaux sociaux dans le contexte de l'entreprise sur des solution libres et propriétaires. Depuis 2001, il s’est depuis spécialisé sur l'utilisation et la mise en œuvre de SharePoint. Evangéliste SharePoint dans la société Exakis depuis 2008, il a l'honneur d'être MVP SharePoint Server depuis 2 ans. Il participe activement à la vie du groupe d'utilisateurs Français de SharePoint (UGSF) dont il préside la branche Ouest de la France (Club SharePoint et .Net Ouest). Il est un des auteurs du livre Français « MS SharePoint Server 2010 » publié en septembre 2010 aux éditions Lavoisier sous la direction de Pierre-Erol Giraudy.</description>
+		</speaker>
+		<speaker id="fbarbin">
+			<name>Fabrice Barbin</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1304434419218/speakers/fbarbin.jpg</pictureUrl>
+			<description>Evangéliste technique, récompensé Microsoft MVP pour la quatrième année consécutive, Fabrice Barbin est un expert reconnu sur SharePoint Workspace, outil de collaboration en équipes distribuées et client déconnecté pour les portails d’entreprise SharePoint. Il est à ce titre le fondateur de la Communauté SharePoint Workspace francophone et l'auteur du premier ouvrage dédié à ce produit (Editions ENI - Janvier 2011). Il assure depuis de nombreuses années la promotion de Groove / SharePoint Workspace au travers de blogs, d'articles de presse ou de webcasts et intervient régulièrement lors de conférences nationales ou internationales. Evoluant depuis une dizaine d’années au sein de l’environnement Microsoft, de culture « développeur », il est également vice-président du Club SharePoint et DotNet Ouest France et est un contributeur actif au sein du Club SharePoint France (UGSF). Professionnellement, il est le dirigeant de SYNERGIZ, centre de compétences et de R&amp;D spécialisé sur les technologies Microsoft. On peut le suivre sur twitter @fbarbin ou sur son blog http://blog.fbarbin.com</description>
+		</speaker>
+		<speaker id="obillard">
+			<name>Olivier Billard</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1300791501151/speakers/1657194.jpg?height=100&amp;width=100</pictureUrl>
+			<description>Olivier Billard est architecte logiciel chez Orange Business Services. Il est principalement impliqué dans les problématiques d'architecture, de forge logicielle et de formation, plus spécifiquement dans le monde Java.</description>
+		</speaker>
+		<speaker id="thenrio">
+			<name>Thierry Henrio</name>
+			<pictureUrl>http://a1.twimg.com/profile_images/1142138959/me-kitchen-2010-10-11_reasonably_small.jpg</pictureUrl>
+		</speaker>
+		<speaker id="lperrier">
+			<name>Ludovic Perrier</name>
+			<description>Ludovic Perrier est directeur général de la société Diotasoft, qui emploie aujourd’hui plus de 15 personnes et développe des applications Android et iOS, mais également des solutions technologiques pour le marketing (Réalité augmenté, Robotique,…). Développeur Android de la première heure (participant au premier concours Android de google en 2008 et lauréat au concours Android SFR jeune talent développeur), il a rapidement proposé des développements pour cette plateforme à ses clients. Par ailleurs, Ludovic n‘hésite pas à partager ces compétences à travers différents événements ou des développeurs débutants ou confirmés se retrouve pour parler de cette plateforme (GET 2009, Android Developer Labs 2010, Barcamp ParisGtug, PAUG 2010).</description>
+		</speaker>
+		<speaker id="sknodel">
+			<name>Sebastian Knödel</name>
+		</speaker>
+		<speaker id="mherberts">
+			<name>Mathias Herberts</name>
+			<pictureUrl>http://media02.linkedin.com/media/p/3/000/046/245/3125588.jpg</pictureUrl>
+			<description>Mathias Herberts est ingénieur disruptif et évangéliste BigData au Crédit Mutuel Arkéa. Mathias baigne depuis la fin des années 1980 dans le monde de l'Internet et du logiciel libre. En 1995 il participe à la création du fournisseur d'accès infini.fr, cette même année il invite RMS à Télécom Bretagne. Contributeur aux logiciels squid, sendmail, httpd, tomcat, il introduit Linux dans le monde bancaire en 1999. Après 8 ans dans le secteur financier, il rejoint en 2008 Google à Dublin au sein de l'équipe BigTable SRE. En 2009 il revient en France et retrouve le Crédit Mutuel Arkéa où il révolutionne une seconde fois le secteur bancaire en abordant ses problématiques *the Google way*. Mathias est le créateur des services bibale.com, pourri.fr et de l'infrastructure de recherche géographique GeoXP. @herberts</description>
+		</speaker>
+		<speaker id="ehugonnet">
+			<name>Emmanuel Hugonnet</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1300283276010/programme/la-vie-dans-du-code-legacy/4475809395_78328b5be.jpg?height=133&amp;width=100</pictureUrl>
+			<description>Depuis plus de dix ans, Emmanuel Hugonnet conçoit et met en place des solutions J2EE pour de grands comptes de l'industrie et des télécoms. Cette expérience lui a permis d'avoir une vision globale du développement d'applications professionnelles et de maitriser les technologies adaptées. Il a participé, durant plusieurs mois, à la réflexion d'Orange Labs sur la mise en œuvre de leur plate-forme de développement et d'intégration des nouveaux services du Système d'Information. Depuis il a rejoint l'équipe Silverpeas afin de moderniser le processus de développement, ouvrir le code et reprendre l'architecture du logiciel. Il anime l'AlpesJug, le plus enneigé des JUG français.</description>
+		</speaker>
+		<speaker id="mchaize">
+			<name>Michael Chaize</name>
+			<pictureUrl>http://lh6.ggpht.com/_apLykarZbI4/TIYfx3qI2FI/AAAAAAAAAic/D9IebIbXKDU/s200/michael-chaize-2-small.jpg</pictureUrl>
+			<description>Michaël Chaize est Flash Platform Evangelist pour Adobe. Il représente la technologie Flash et le framework Flex en Europe et rencontre pour cela de nombreux développeurs JAVA, PHP et des grands comptes. Avant d'occuper ces fonctions, il travaillait en tant qu'avant-vente technique de la solution Flex chez des grands comptes du CAC40, et les accompagnait dans leurs efforts de migration vers les Rich Internet Applications. Vous pouvez suivre ses expériences sur son blog, http://www.riagora.com.</description>
+		</speaker>
+		<speaker id="ophilippot">
+			<name>Olivier Philippot</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1301252093709/speakers/Olivier_philippot.jpg?height=120&amp;width=100</pictureUrl>
+			<description>Olivier Philippot est consultant en électronique et informatique industrielle. Il est auteur du livre Green IT aux éditions ENI et a mis en place le blog simplygreenit.fr pour partager son expérience sur la Green IT. Il est un membre actif de la communauté Green IT et a rejoint le blog de référence GreenlT.fr où il rédige régulièrement des articles sur les bonnes pratiques et sur l'actualité internationale Green IT.</description>
+		</speaker>
+		<speaker id="mfiguiere">
+			<name>Michaël Figuière</name>
+			<pictureUrl>http://www.parisjug.org/xwiki/bin/download/Speaker/MichaelFiguiere/michaelFiguiere.jpg</pictureUrl>
+			<description>Michaël Figuière est consultant chez Xebia où il intervient notamment sur des sites Web à fort trafic. A son aise tant avec les environnements Java d'entreprise qu'avec les technologies de plus bas niveau, il est spécialisé dans les architectures distribuées et les technologies innovantes telles que NoSQL, les moteurs de recherche, ou encore le data mining. Il intervient régulièrement dans des Java User Group pour parler de ses sujets favoris et est l'auteur de nombreux articles.</description>
+		</speaker>
+		<speaker id="rhuyn">
+			<name>Rudy Huyn</name>
+			<pictureUrl>http://www.breizhcamp.org/_/rsrc/1302534651182/speakers/IMG_0236b.jpg</pictureUrl>
+			<description>Rudy Huyn est ingénieur logiciel et référent technique Microsoft (.Net, Windows Phone 7, WPF, Kinect, etc...) chez Orange Business Services. Il est membre du club Sharepoint &amp; .NET Ouest et actif dans la communauté Windows Phone 7 france. Passionné de nouvelles technologies et plus particulièrement de .Net, vous pouvez le suivre sur Twitter : @rudyhuyn et sur son blog : www.rudyhuyn.com/blog</description>
+		</speaker>
+		<speaker id="rmichaud">
+			<name>Renan Michaud</name>
+			<description>Renan Michaud  est expert accessibilité chez Softeam et membre du Groupe de travail Accessiweb. Intervenant notamment pour les administrations (Direction Général des Finances Publiques, Ministère des Affaires Etrangères et Européenne, La Poste, etc.) depuis 2004, il les accompagne en tant qu'expert technique via des études, audit et formations dans le cadre de la prise en compte du handicap.</description>
+		</speaker>
+		<speaker id="agoncalves">
+			<name>Antonio Goncalves</name>
+			<pictureUrl>http://assets.devx.com/authorphotos/18152.jpg</pictureUrl>
+			<description>Architecte sénior et Java Champion, Antonio Goncalves intervient chez ses clients comme consultant et formateur. Ancien consultant Weblogic chez BEA Systems, il s'est spécialisé depuis 1998 dans l'architecture logicielle et les technologies Java. Antonio est l'auteur du livre Java EE 5 aux éditions Eyrolles et Java EE 6 aux éditions Apress. Il est membre du JCP et intervient sur les JSR 316 (Java EE 6), JSR 317 (JPA 2.0) et JSR 318 (EJB 3.1). Il enseigne également la plate-forme Java EE au Conservatoire National des Arts et Métiers. Il est rédacteur technique pour les sites DevX et developpez.com, co-fondateur du Paris Java User Group et co-animateur des Cast Codeurs. Suivez-le sur son blog ou sur Twitter @agoncal.</description>
+		</speaker>
+		<speaker id="sblanchard">
+			<name>Samuel Blanchard</name>
+			<pictureUrl>http://www.developpez.net/forums/avatars/353190-samuel-blanchard.gif?dateline=1266141448</pictureUrl>
+			<description>Samuel Blanchard est responsable du pôle développement chez Naviso, rédacteur / modérateur de la communauté developpez.com et membre du club Sharepoint &amp; .NET Ouest. Passionné du Framework .NET et particulièrement de WPF/Silverlight/WP7, vous pouvez le rejoindre sur son blog http://blog.naviso.fr</description>
+		</speaker>
+		<speaker id="cjollivet">
+			<name>Christophe Jollivet</name>
+			<pictureUrl>http://sites.google.com/site/jugsummercamp/_/rsrc/1274112273699/home/christophe_jollivet.jpg</pictureUrl>
+			<description>Christophe Jollivet est développeur Senior chez Apside à Tours et référent technique pour la plateforme Java. Il s'intéresse à tout ce qui peut être assimilé à de la technologie, mais aussi aux communautés. Après avoir été co-responsable de la rubrique Java de Developpez.com, il a fondé le Tours JUG.</description>
+		</speaker>
+		<speaker id="jdubois">
+			<name>Julien Dubois</name>
+			<pictureUrl>http://sites.google.com/site/jugsummercamp/_/rsrc/1301408912123/home/julienDubois.jpg</pictureUrl>
+			<description>Julien Dubois est directeur du pôle conseil chez Ippon Technologies, société spécialisée dans le développement et l’architecture d’applications Java. Il y dirige une équipe de consultants et architectes de haut niveau, et intervient régulièrement chez les clients de la société. Julien est connu dans le monde Java pour avoir co-écrit le livre “Spring par la pratique”, avoir dirigé la filiale française de SpringSource, et pour parler régulièrement à des conférences. Vous pouvez le suivre sur Twitter: @juliendubois</description>
+		</speaker>
+	</speakers>
+	<rooms>
+		<room id="amphi">
+			<name>Amphi</name>
+		</room>
+		<room id="guernesey">
+			<name>Guernesey</name>
+		</room>
+		<room id="jersey">
+			<name>Jersey</name>
+		</room>
+		<room id="i50">
+			<name>i50</name>
+		</room>
+	</rooms>
+	<subjects>
+		<subject id="java">
+			<name>Java</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1292511610200/programme/java-logoS.png</imageUrl>
+		</subject>
+		<subject id="javascript">
+			<name>Javascript</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300110410039/programme/javascript.jpg</imageUrl>
+		</subject>
+		<subject id="ruby">
+			<name>Ruby</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1292511575567/programme/Ruby_logo.png</imageUrl>
+		</subject>
+		<subject id="mix">
+			<name>Mix</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300110593143/programme/mix.jpg</imageUrl>
+		</subject>
+		<subject id="dotnet">
+			<name>.Net</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1292511494118/programme/microsoft_.net_logo.png</imageUrl>
+		</subject>
+		<subject id="android">
+			<name>Android</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300268930588/programme/android.jpg</imageUrl>
+		</subject>
+		<subject id="ios">
+			<name>iOS</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300289113609/programme/apple-ios.png</imageUrl>
+		</subject>
+		<subject id="groovy">
+			<name>Groovy</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300110059399/programme/groovy-logo-big.png</imageUrl>
+		</subject>
+		<subject id="flash">
+			<name>Flash</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300268830741/programme/flash.png</imageUrl>
+		</subject>
+		<subject id="python">
+			<name>Python</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300109777533/programme/python-logo.png</imageUrl>
+		</subject>
+		<subject id="html5">
+			<name>HTML5</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300268946181/programme/HTML5.png</imageUrl>
+		</subject>
+		<subject id="php">
+			<name>PHP</name>
+			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300109867317/programme/PHP.png</imageUrl>
+		</subject>
+	</subjects>
+	<timeSlots>
+		<timeSlot id="8h">
+			<name>8h30</name>
+			<sessions>
+				<session>
+					<title>Accueil café</title>
+					<timeslot reference="8h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="9h">
+			<name>9h - 10h</name>
+			<sessions>
+				<session>
+					<title>Keynote - accueil &amp; sponsor</title>
+					<room reference="amphi"/>
+					<speakers>
+						<speaker reference="sdouche" />
+					</speakers>
+					<timeslot reference="9h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="10h">
+			<name>10h10 - 11h10</name>
+			<sessions>
+				<session>
+					<title>Applications mobiles avec GWT 2.x</title>
+					<description>Il y a seulement 3 ans, l’utilisation d’internet sur des terminaux mobiles (smartphones) était une activité marginale réservée à ceux dotés de la patience nécessaire pour supporter la lenteur des connexions et des interfaces graphiques mal adaptées au format de l’écran. Ces jours-là semblent bien loin derrière nous et le nombre de smartphones connectés sera bientôt supérieur à celui des terminaux «classiques». Mais développer une bonne application web mobile n’est pas une mince affaire: un connexion mobile a une grande latence et une bande passante réduite, elle peut être perdue à tout moment et l’espace disponible pour l’interface graphique est assez réduit. Une bonne application web mobile se doit donc de respecter ces contraintes en minimisant la bande passante utilisée et les aller-retours serveur, ainsi qu’en proposant un mode déconnecté et une interface graphique adaptée.
+Cette session vous montrera pourquoi le Google Web Toolkit est le framework Java idéal pour réaliser des applications web (mobiles ou non d’ailleurs) optimisées pour une bonne montée en charge, une consommation réduite de bande passante et un fonctionnement hors-ligne.
+L’exemple utilisé pour illustrer ces concepts est un agenda de conférence utilisant des données d’une API REST.</description>
+					<room reference="amphi"/>
+					<speakers>
+						<speaker reference="sdiaz" />
+					</speakers>
+					<subjects>
+						<subject reference="java"/>
+						<subject reference="javascript"/>
+					</subjects>
+					<timeslot reference="10h" />
+				</session>
+				<session>
+					<title>Engine Yard, Heroku &amp; Co</title>
+					<description>Mon patron/client/subconscient (rayer la mention inutile) me demande de mettre en place une application. Mais personne ne sait me dire combien de visiteurs il y aura, ni même si ça va marcher. Et comme je ne suis pas un mec système je serai bien avancé avec un dédié à 30 euros/mois. Mais dans 01 informatique, ils parlent de Cloud. Donc je vais ajouter une dimension Buzz à mon application : je vais l'installer sur du Cloud. Nous verrons donc ce que ça va m'apporter (et/ou m'enlever).</description>
+					<room reference="guernesey"/>
+					<speakers>
+						<speaker reference="nledez" />
+					</speakers>
+					<subjects>
+						<subject reference="ruby"/>
+					</subjects>
+					<timeslot reference="10h" />
+				</session>
+				<session>
+					<title>Enfin de la biodiversité dans l'écosystème des bases de données</title>
+					<description>NoSQL est en passe de réussir là où les bases de données objet et XML ont échoué : offrir de nouveaux systèmes de stockage alternatif à notre “bonne vieille” base de données relationnelle, pour répondre au mieux aux problématiques actuelles. Nous vous aiderons à vous y retrouver dans la jungle des technologies NoSQL, à comprendre les différents types de solutions utilisées par les grands acteurs du Web. Sans pourtant reléguer au placard les SGBDs classiques, vous découvrirez les cas d’utilisations typiques de ces technologies et comment les bases NoSQL permettent d’apporter des solutions simples et élégantes à des problèmes trop complexes en relationnel, tout en répondant aux problématiques de scalabilité.</description>
+					<room reference="jersey"/>
+					<speakers>
+						<speaker reference="omallassi" />
+					</speakers>
+					<subjects>
+						<subject reference="mix"/>
+					</subjects>
+					<timeslot reference="10h" />
+				</session>
+				<session>
+					<title>Lean .Net Architecture</title>
+					<description>Les outils et méthodes classique de l’agilité (TDD, Intégration continue, réorganisation régulier du code…) visent tous à aider le développeur à maitriser la complexité du code en favorisant et optimisant une approche défensive, en invitant le développeur à réviser fréquemment le code qu’il écrit afin de pouvoir répondre efficacement aux changements inévitables des besoins ou points de vues lors des développements.  Aspectize est une société innovante qui propose en complément de ces outils, d’autres outils qui éliminent le code récurrent. En factorisant tout le code qui est traditionnellement écrit pour stocker,  afficher et communiquer l’information bref le code cérémonial, invariant sans valeur ajouté métier, le développeur est invité à s’occuper uniquement de la valeur métier l’application qui réside essentiellement dans la conception des données, conception de l’ergonomie et l’écriture du code exclusivement métier, des calculs et validation. Cette approche favorise grandement l’agilité des équipes en réduisant la durée des cycles de développement de plusieurs semaines à quelques heures.</description>
+					<room reference="i50"/>
+					<speakers>
+						<speaker reference="ffadel" />
+					</speakers>
+					<subjects>
+						<subject reference="dotnet"/>
+					</subjects>
+					<timeslot reference="10h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="11h">
+			<name>11h20 - 12h20</name>
+			<sessions>
+				<session>
+					<title>Android &amp; iOS : Introduction à 2 plateformes en vogue</title>
+					<description>Téléphones portables et tablettes électroniques sont aujourd'hui devenus plus que de simples gadgets : ce sont de véritables ordinateurs personnels mobiles offrant un large panels de fonctionnalités : calendrier, client courriel, photos, navigateur internet, etc. Certaines plateformes offrent également des marchés permettant de télécharger des applications tierces améliorant encore les possibilités offertes par le terminal. Parmi le paysage des applications mobiles, 2 systèmes d'exploitation sortent leur épingle du jeu : iOS maintenu par Apple et Android poussé par Google.
+Lors de cette session nous étudierons et comparerons les deux plateformes mobiles d'un point de vue tout d'abord marketing (historique, marché d'applications, caractéristique). Nous aborderons ensuite les différences techniques entre les deux systèmes : langage de programmation, SDK, environnement de développement, ... Pour finir, nous développerons une petite application sur les deux plateformes afin de mieux appréhender les concepts précédemment détaillés.</description>
+					<room reference="jersey" />
+					<speakers>
+						<speaker reference="cmottier" />
+					</speakers>
+					<subjects>
+						<subject reference="android"/>
+						<subject reference="ios"/>
+					</subjects>
+					<timeslot reference="11h" />
+				</session>
+				<session>
+					<title>Gadget OpenSocial  avec eXo Cloud IDE</title>
+					<description>Durant cette session nous passerons en revue l'état de l'art et les standards d'intégration des solutions collaboratives et sociales, notamment OpenSocial, Portlet et CMIS. Vous découvrirez l’intérêt de ces standards pour la mise en place d'intranets/extranets de nouvelle génération.
+Tugdual montrera également comment grâce à un environnement de développement en ligne il est maintenant possible de raccourcir les temps de mise en place de nouveaux services pouvant être développés et déployés en local, mais aussi poussés sur le cloud sur les nouvelles PaaS, comme par exemple OpenShift de Red Hat Cloud, avec des langages aussi différents que Java, Ruby/Rails ou PHP...</description>
+					<room reference="i50" />
+					<speakers>
+						<speaker reference="tgrall" />
+					</speakers>
+					<subjects>
+						<subject reference="groovy"/>
+					</subjects>
+					<timeslot reference="11h" />
+				</session>
+				<session>
+					<title>Révolutionner la persistance : la Prévalence</title>
+					<description>Cette session a pour but de faire découvrir sur le mode Kata (présentation de code) la prévalence, une technologie à même de révolutionner le paysage de la persistance et du mapping Objet / Relationnel. Sa simplicité extrême en fait une technologie intéressante pour un développement Agile. De nombreux buts sont communs avec l'approche CQRS présentée dans la session DDD qui précède cette session.</description>
+					<room reference="guernesey" />
+					<speakers>
+						<speaker reference="jpgouigoux"/>
+						<speaker reference="gcollic"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+						<subject reference="dotnet" />
+					</subjects>
+					<timeslot reference="11h" />
+				</session>
+				<session>
+					<title>Déploiement Continu en production</title>
+					<description>Je souhaite partager mon retour d'expérience sur la mise en place d'une usine logicielle allant jusqu'au déploiement continu en production. Les problèmes sont autrement plus compliqués que ceux que l'on doit traiter pour le déploiement en intégration d'autant plus que l'application est composée de technologies diverses (Java standalone, JEE, Python, Shell, Flex). </description>
+					<room reference="amphi" />
+					<speakers>
+						<speaker reference="cfalguiere" />
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+						<subject reference="flash"/>
+						<subject reference="python"/>
+					</subjects>
+					<timeslot reference="11h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="12h">
+			<name>12h30 - 13h30</name>
+			<sessions>
+				<session>
+					<title>Extension Chrome &amp; HTML5</title>
+					<description></description>
+					<room reference="jersey" />
+					<speakers>
+						<speaker reference="glormeau"/>
+					</speakers>
+					<subjects>
+						<subject reference="html5"/>
+					</subjects>
+					<timeslot reference="12h" />
+				</session>
+				<session>
+					<title>JavaEE compareTo .Net</title>
+					<description>"On gagne plus à connaître les bonnes qualités de son ennemi, qu’à être instruit de ses fautes" (Proverbes Chinois)
+Java, dotNet, les deux frères ennemis ? En y regardant de près, les deux plateforme ont pas mal de choses en commun et de bonnes raisons pour s'inspirer l'une de l'autre sur les aspects qui marchent bien, ou de tirer des lessons de leurs erreurs respectives.
+Source : On gagne plus à connaître les bonnes qualités de son ennemi, qu’à être instruit de ses fautes. | Blog Dicocitations - dico des citations</description>
+					<room reference="amphi" />
+					<speakers>
+						<speaker reference="ndeloof"/>
+						<speaker reference="jpgouigoux" />
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+						<subject reference="dotnet" />
+					</subjects>
+					<timeslot reference="12h" />
+				</session>
+				<session>
+					<title>SharePoint Online &amp; Office 365</title>
+					<description></description>
+					<room reference="i50" />
+					<speakers>
+						<speaker reference="ngeorgeault"/>
+						<speaker reference="fbarbin"/>
+					</speakers>
+					<subjects>
+						<subject reference="dotnet" />
+					</subjects>
+					<timeslot reference="12h" />
+				</session>
+				<session>
+					<title>Behaviour Driven Development</title>
+					<description>Qui n'a pas rêvé de voir son client rédiger ses tests à sa place, dans un langage naturel compréhensible par tout le monde, et de pouvoir les exécuter ?
+C'est l'approche Behavior Driven Development, complémentant la collaboration des développeurs avec les clients métier déjà facilitée par les méthodes agiles, en permettant au client de formaliser ses tests d'acceptance dans un format naturel directement exécutable.</description>
+					<room reference="guernesey" />
+					<speakers>
+						<speaker reference="obillard"/>
+						<speaker reference="thenrio"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+						<subject reference="ruby" />
+					</subjects>
+					<timeslot reference="12h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="13h">
+			<name>13h30</name>
+			<sessions>
+				<session>
+					<title>Galette saucisse</title>
+					<timeslot reference="13h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="14h">
+			<name>14h30 - 15h30</name>
+			<sessions>
+				<session>
+					<title>Réalité augmentée</title>
+					<description>Avec les nouveaux SDK de réalité augmentée,  on peut créer une nouvelle génération de jeu vidéo et des applications aux fonctionnalités inédites pour les terminaux mobiles qui embarque des systèmes d'exploitation puissant comme iOS ou Android. Dans notre présentation nous vous donnerons un aperçu des possibilités des applications de réalité augmenté puis nous nous concentrerons sur le sdk Android QCAR crée par Qualcomm avec des exemples de développement et les méthodes de mise en oeuvre. Pour terminer, à travers l'outil Unity 3D, nous verrons les possibilités de rendu avec le SDK et le NDK Android ou encore la réalisation des plugin pour rendre vos applications plus innovantes sur iOS et Android.</description>
+					<room reference="amphi" />
+					<speakers>
+						<speaker reference="lperrier"/>
+						<speaker reference="sknodel"/>
+					</speakers>
+					<subjects>
+						<subject reference="android" />
+					</subjects>
+					<timeslot reference="14h" />
+				</session>
+				<session>
+					<title>Drupal dans le cloud avec Azure</title>
+					<description></description>
+					<room reference="i50" />
+					<speakers>
+						<speaker reference="ngeorgeault" />
+					</speakers>
+					<subjects>
+						<subject reference="dotnet" />
+						<subject reference="java" />
+						<subject reference="php"/>
+					</subjects>
+					<timeslot reference="14h" />
+				</session>
+				<session>
+					<title>L'écosystème Hadoop</title>
+					<description>L'avenir appartiendra à ceux qui seront capable d'analyser les vastes volumes de données qu'ils ont collectés. Sur les traces de Google, le projet Hadoop vise à mettre à disposition de tous les outils qui ont fait le succès du géant de l'Internet. Après un rappel historique de la génèse du projet, nous ferons un tour d'horizon des briques de bases ainsi que des services connexes qui constituent l'écosystème Hadoop. Enfin nous vous inviterons à sortir des sentiers battus pour appréhender le monde sous un angle différent, démarche indispensable pour dompter les problématiques à l'échelle du Web.
+Pour apprécier pleinement cette présentation, nous vous invitons à lire les articles suivants:
+http://labs.google.com/papers/gfs-sosp2003.pdf
+http://labs.google.com/papers/mapreduce-osdi04.pdf
+http://labs.google.com/papers/chubby-osdi06.pdf
+http://labs.google.com/papers/bigtable-osdi06.pdf
+http://labs.google.com/papers/sawzall-sciprog.pdf
+http://code.google.com/apis/protocolbuffers/docs/overview.html</description>
+					<room reference="jersey" />
+					<speakers>
+						<speaker reference="mherberts"/>
+					</speakers>
+					<subjects>
+						<subject reference="mix" />
+					</subjects>
+					<timeslot reference="14h" />
+				</session>
+				<session>
+					<title>La vie dans du code legacy</title>
+					<description>Silverpeas est un produit créé en 1999 par une start-up qui a compté jusqu'à 40 développeurs. C'était l'époque bénie des Weblogic, Orion ... où on savait coder avec UltraEdit32 et sans tests des EJBs BMP. Peut on continuer à faire évoluer un tel code ? Comment fait on pour continuer à faire vivre ce produit 10 ans après avec une équipe de 5 développeurs ? Ne comptez pas entendre parler des derniers frameworks à la mode,il y aura du sang et de la sueur et Chuck Norris ne viendra pas vous sauver...
+Un retour d'expérience les mains dans le cambouis jusqu'aux coudes pour vous montrer que rien n'est jamais perdu et que les méthodes agiles de développements (notament les pratiques issues d'eXtrem Programing) sont là pour vous aider (sauver ? ). Un bon rappel aussi pour toutes les applications que vous développez, pensez que dans 10 ans il y en aura peut-être qui devront continuer à les faire évoluer ..</description>
+					<room reference="guernesey" />
+					<speakers>
+						<speaker reference="ehugonnet"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+					</subjects>
+					<timeslot reference="14h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="15h">
+			<name>15h40 - 16h40</name>
+			<sessions>
+				<session>
+					<title>Flex 4.5 : Développer une application multi-screen connectée à JAVA, .Net, Ruby ou PHP</title>
+					<description>La toute nouvelle version du framework open-source Flex permet de rapidement développer des applications riches pour PC mais aussi pour smartphones et tablettes. Un seul et même projet peut désormais être déployé sur les appareils Android, les tablettes BlackBerry PlayBook et même sur iOS (iPhone, iPad et iTouch). Michaël présentera comment développer une application Flex mobile en quelques minutes et comment la faire communiquer avec des services distants servis par JAVA, .NET, Ruby ou PHP. Il présentera ensuite quelques spécificités du couple Flex et Java qui permettent de développer des applications riches connectées en temps réel à un back-end Java.</description>
+					<room reference="guernesey" />
+					<speakers>
+						<speaker reference="mchaize"/>
+					</speakers>
+					<subjects>
+						<subject reference="flash" />
+						<subject reference="java" />
+						<subject reference="ruby" />
+						<subject reference="dotnet" />
+						<subject reference="php" />
+					</subjects>
+					<timeslot reference="15h" />
+				</session>
+				<session>
+					<title>Green-IT, que peuvent faire les développeurs ?</title>
+					<description>La Green IT, uniquement du buzz ? Une arme marketing ? Un problème de DSI ou de gestionnaire de data center ? Dans tous les cas, les développeurs détiennent les principales clés pour maîtriser l’impact environnemental des logiciels et pour générer des économies d’énergie. Nous verrons dans cette session :
+ * La green IT c’est quoi ?
+ * Le logiciel, c’est numérique, donc ça ne pollue pas ! ??
+ * Les bonnes pratiques à intégrer pour un développement plus « vert ».
+ * Et le cloud dans tout cela ? La solution miracle pour l’environnement ?</description>
+					<room reference="i50" />
+					<speakers>
+						<speaker reference="ophilippot"/>
+					</speakers>
+					<subjects>
+						<subject reference="mix" />
+					</subjects>
+					<timeslot reference="15h" />
+				</session>
+				<session>
+					<title>Elasticité et haute disponibilité avec Cassandra</title>
+					<description>Cassandra est une base de données NoSQL initialement développée par Facebook qui brille par son architecture symétrique lui conférant une parfaite élasticité en accord avec les préceptes du Cloud Computing. Mais elle offre également d'autres propriétés particulièrement attirantes telles qu'une faible latence et une tolérance aux pannes d'une machine, d'un rack ou d'un Datacenter. Son modèle de données, certes moins riche que ce que le monde relationnel propose, s'avère tout à fait adapté à de nombreux cas d'utilisation dans le monde du Web. Cette présentation fera un tour d'horizon de Cassandra, des aspects théoriques à sa mise en œuvre.</description>
+					<room reference="amphi" />
+					<speakers>
+						<speaker reference="mfiguiere"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+						<subject reference="ruby" />
+					</subjects>
+					<timeslot reference="15h" />
+				</session>
+				<session>
+					<title>Jouons avec Kinect</title>
+					<description>Plus d'un million de Kinect ont été vendu en seulement 10 jours et c'est encore aujourd'hui l'accessoire high-tech le plus vendu dans un court laps de temps. Dans cette session, on présentera le fonctionnement interne de Kinect mais aussi comment développer avec : les outils, les possibilités et les interactions avec d'autres objets.</description>
+					<room reference="jersey" />
+					<speakers>
+						<speaker reference="rhuyn"/>
+					</speakers>
+					<subjects>
+						<subject reference="dotnet" />
+						<subject reference="java" />
+					</subjects>
+					<timeslot reference="15h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="16h">
+			<name>16h40</name>
+			<sessions>
+				<session>
+					<title>Pause kouign aman</title>
+					<timeslot reference="16h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="17h">
+			<name>17h - 18h</name>
+			<sessions>
+				<session>
+					<title>Web 2 pour tous: l'accessibilité dans les interface riches</title>
+					<description></description>
+					<room reference="guernesey" />
+					<speakers>
+						<speaker reference="rmichaud"/>
+					</speakers>
+					<subjects>
+						<subject reference="html5" />
+						<subject reference="flash" />
+					</subjects>
+					<timeslot reference="17h" />
+				</session>
+				<session>
+					<title>Injecter ou ne pas Injecter ? CDI est la question...</title>
+					<description>Dans cette présentation Antonio Goncalves se concentrera sur CDI (Contexts and Dependency Injection), une JSR qui est arrivée avec Java EE 6. Il passera en revu les différentes formes d'injection de dépendances, décrira le modèle de CDI et présentera ses autres fonctionnalités (cycle de vie contextuel, interception, évènements, extensions...). Si vous en avez ras le bol de votre configuration XML, venez assister à cette présentation et rentrez dans le monde merveilleux du typage fort et du couplage lâche de CDI.</description>
+					<room reference="amphi" />
+					<speakers>
+						<speaker reference="agoncalves"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+					</subjects>
+					<timeslot reference="17h" />
+				</session>
+				<session>
+					<title>NoSQL avec Ruby/Rails</title>
+					<description>Les bases de données relationnelles, c'est has been. Maintenant, il faut faire de la persistance de donnée et du NoSQL. Bon c'est bien gentil tout ça, mais moi je fais comment ? Cette session va nous permettre de voir comment Ruby et Rails vont me simplifier la vie. Et ce que ces nouvelles bases vont pouvoir m'apporter.</description>
+					<room reference="i50" />
+					<speakers>
+						<speaker reference="nledez" />
+					</speakers>
+					<subjects>
+						<subject reference="ruby" />
+					</subjects>
+					<timeslot reference="17h" />
+				</session>
+				<session>
+					<title>Python me fait kiffer (introduction à Python)</title>
+					<description>L'indice TIOBE a déclaré Python "langage de l'année" (pour la 2eme fois en 4 ans), récompensant ainsi la plus forte progression en terme de popularité. Cette session tentera d'expliquer les raisons de cet engouement, en décortiquant tous les aspects du langage et de son écosystème : histoire, philosophie, syntaxe, sémantique, forces et faiblesses, projets majeurs. Nous aborderons aussi la particularité de développer avec un langage dynamique et l'avantage que l'on peut tirer à l'utiliser. L'orateur est lui même un développeur Python depuis 12 ans.</description>
+					<room reference="jersey" />
+					<speakers>
+						<speaker reference="sdouche" />
+					</speakers>
+					<subjects>
+						<subject reference="python" />
+					</subjects>
+					<timeslot reference="17h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="18h">
+			<name>18h10 - 19h10</name>
+			<sessions>
+				<session>
+					<title>Un émulateur GameBoy pour WP7</title>
+					<description>Dans cette session, on présentera rapidement les différents technologies (Silverlight &amp; XNA) et outils (Visual Studio &amp; Blend) utilisés pour la création d’application et de jeux sur WP7 puis on s’attaquera à la problématique spécifique de l’émulation et particulièrement l’affichage de pixel à l’écran sur WP7.</description>
+					<room reference="guernesey" />
+					<speakers>
+						<speaker reference="sblanchard"/>
+					</speakers>
+					<subjects>
+						<subject reference="dotnet" />
+					</subjects>
+					<timeslot reference="18h" />
+				</session>
+				<session>
+					<title>Google App Engine, le cloud facile ?</title>
+					<description>Google App Engine est le cloud façon Google. Cette plateforme vous promet le développement et le déploiement facile de vos applications Java ou Python dans le Cloud. Elle vous offre un certain nombre de services pour vous aider mais vous impose aussi des contraintes. Au cours de cette présentation nous nous intéresserons à ces services mais aussi aux contraintes qui peuvent frustrer le développeur imaginant transposer directement son application dans le cloud.</description>
+					<room reference="amphi" />
+					<speakers>
+						<speaker reference="cjollivet"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+						<subject reference="python" />
+					</subjects>
+					<timeslot reference="18h" />
+				</session>
+				<session>
+					<title>Hibernate vs le cloud computing</title>
+					<description>Les bases de données relationnelles classiques ont du mal à monter en charge de manière "élastique": elles sont de manière générale peu adaptées aux nouvelles solutions de cloud computing, de type Amazon EC2 ou VMWare.
+Nous verrons dans cette session:
+ * les problèmes couramment rencontrés et leurs solutions proposées par les grand éditeurs (type Oracle RAC), ainsi que leurs limitations
+ * comment ces problèmes se traduisent dans le monde Java, en particulier avec Hibernate
+ * quelles solutions peuvent être utilisées avec Hibernate, en particulier avec son système de cache : nous verrons les solutions de clustering, dont Terracotta et Coherence
+ * ce que proposent les nouvelles solutions dites "NoSQL", en prenant l'exemple de Cassandra: leurs avantages, leurs inconvénients, leurs limitations</description>
+					<room reference="jersey" />
+					<speakers>
+						<speaker reference="jdubois"/>
+					</speakers>
+					<subjects>
+						<subject reference="java" />
+					</subjects>
+					<timeslot reference="18h" />
+				</session>
+				<session>
+					<title>Challenge: mon code est-il plus &lt;...&gt; que le tiens ?</title>
+					<description>Venez découvrir si XXX est ... : petit, gros, élégant, lourd, pourri ou encore autre chose
+
+Au cours du challenge, vous aurez l'occasion de résoudre 2 problèmes, sur le timing suivant :
+période "no spoiler" de 10 minutes
+un équipe qui a trouvé la réponse peut dire : "J'ai trouvé!"
+au bout de la période "no spoiler", les 3 premiers trouveurs présentent leur code, timebox 3 min
+si il n'y en a pas, le premier trouveur présente son code dès qu'il a trouvé
+et on passe à la question suivante...
+
+On finira sur 10 minutes de débriefing, entre participants, pour montrer son code et investiguer cette question
+
+    Mon code est-il plus XXX que le tien ?
+
+Modalités :
+Tout langage (go, erlang, XXX, ...)
+Un seul code par équipe, pas de contrainte à la taille de l'équipe (1..n)
+Parler est possible
+On peut vérifier si on a la bonne réponse avant de dire "J'ai trouvé"
+Prérequis :
+Poste de développement autonome : environnement, documentation
+Les problèmes sont simples, vous n'avez pas besoin de serveur web ou de la dernière librairie de cryptage
+Les problèmes sont compliqués, il faut comprendre ce qu'on a besoin de faire
+Il faut coder ou assister un codeur
+Inscription sur place</description>
+					<room reference="i50" />
+					<speakers>
+						<speaker reference="thenrio" />
+					</speakers>
+					<subjects>
+						<subject reference="mix" />
+					</subjects>
+					<timeslot reference="18h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="19h">
+			<name>19h20</name>
+			<sessions>
+				<session>
+					<title>Community BOF</title>
+					<room reference="amphi" />
+					<timeslot reference="19h" />
+				</session>
+			</sessions>
+		</timeSlot>
+		<timeSlot id="20h">
+			<name>20h</name>
+			<sessions>
+				<session>
+					<title>Soirée inter-communautés en centre ville</title>
+					<timeslot reference="20h" />
+				</session>
+			</sessions>
+		</timeSlot>
+	</timeSlots>
+</event>
