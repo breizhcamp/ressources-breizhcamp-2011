@@ -215,6 +215,14 @@
 			<name>PHP</name>
 			<imageUrl>http://www.breizhcamp.org/_/rsrc/1300109867317/programme/PHP.png</imageUrl>
 		</subject>
+		<subject id="coffee">
+			<name>pause</name>
+			<imageUrl>http://www.breizhjug.org/_/rsrc/1308130819068/javacamp/coffee.png</imageUrl>
+		</subject>
+		<subject id="lunch">
+			<name>repas</name>
+			<imageUrl>http://www.breizhjug.org/_/rsrc/1308130832555/javacamp/lunch.png</imageUrl>
+		</subject>
 	</subjects>
 	<timeSlots>
 		<timeSlot id="8h">
@@ -223,6 +231,9 @@
 				<session>
 					<title>Accueil café</title>
 					<timeslot reference="8h" />
+					<subjects>
+						<subject reference="coffee"/>
+					</subjects>
 				</session>
 			</sessions>
 		</timeSlot>
@@ -422,6 +433,9 @@ C'est l'approche Behavior Driven Development, complémentant la collaboration de
 				<session>
 					<title>Galette saucisse</title>
 					<timeslot reference="13h" />
+					<subjects>
+						<subject reference="lunch"/>
+					</subjects>
 				</session>
 			</sessions>
 		</timeSlot>
@@ -558,6 +572,9 @@ Un retour d'expérience les mains dans le cambouis jusqu'aux coudes pour vous mo
 				<session>
 					<title>Pause kouign aman</title>
 					<timeslot reference="16h" />
+					<subjects>
+						<subject reference="coffee"/>
+					</subjects>
 				</session>
 			</sessions>
 		</timeSlot>
