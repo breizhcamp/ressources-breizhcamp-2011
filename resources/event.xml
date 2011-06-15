@@ -653,15 +653,15 @@ Un retour d'expérience les mains dans le cambouis jusqu'aux coudes pour vous mo
 					<timeslot reference="18h" />
 				</session>
 				<session>
-					<title>Google App Engine, le cloud facile ?</title>
-					<description>Google App Engine est le cloud façon Google. Cette plateforme vous promet le développement et le déploiement facile de vos applications Java ou Python dans le Cloud. Elle vous offre un certain nombre de services pour vous aider mais vous impose aussi des contraintes. Au cours de cette présentation nous nous intéresserons à ces services mais aussi aux contraintes qui peuvent frustrer le développeur imaginant transposer directement son application dans le cloud.</description>
+					<title>Opening Opensource - The Jenkins way</title>
+					<description>Jenkins (formerly known as Hudson) is one of the most used tool in Java (non exclusive) to support continuous integration. Created as a hobby project, it quickly became a strategic tool for most development teams. Designed for extensibility, it also choosed from beginning an incremental development model, applying literally the 'release early, release often' principle. It focussed on building a large, active community, with the lowest contribution barrier I ever seen on opensource project and a complete transparency on project management, making Jenkins something uncommon in opensource world.
+During this session, I'll explain the Jenkins management & technical model, how it promotes contribution and how it allow CloudBees to both support the opensource community-driven project and deliver business value with proprietary extensions.</description>
 					<room reference="amphi" />
 					<speakers>
-						<speaker reference="cjollivet"/>
+						<speaker reference="ndeloof"/>
 					</speakers>
 					<subjects>
-						<subject reference="java" />
-						<subject reference="python" />
+						<subject reference="mix" />
 					</subjects>
 					<timeslot reference="18h" />
 				</session>
