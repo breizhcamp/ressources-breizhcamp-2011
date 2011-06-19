@@ -1,0 +1,5 @@
+Dépendances nécessaires pour que les projets fonctionnent :
+
+http://prevayler.org/ pour la version Java
+
+http://bbooprevalence.sourceforge.net/ pour la version C#
