@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>ccPlayer Accessibility Features &ndash; NCAM</title>
+	
+	<link rel="stylesheet" href="c/ccplayer.css" media="all" type="text/css" />
+	
+	
+</head>
+<body>
+<p id="skipper"><a href="#top" accesskey="8" tabindex="1">Skip to Content</a></p>
+
+<div id="header">
+	<a href="http://ncam.wgbh.org" id="ncam-home-link" accesskey="1" tabindex="2"><img class="img-logo" src="
+	i/ncam_logo_sm.jpg" alt="The WGBH / NCAM / National Center for Accessible Media" width="388" height="78" /></a>
+	
+<!-- #bbinclude "topnav.incl" -->
+	<ul id="site-nav">
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/" accesskey="5" tabindex="3">CCforFlash</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html" accesskey="6" tabindex="4">ccPlayer</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/magpie/index.html" accesskey="6" tabindex="4">MAGpie</a></li>
+		<li><a href="ccforflash-community.html" tabindex="6">Community Help</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+	<div id="main-nav">
+		<img src="i/sp.png" width="100%" height="28" />
+	</div>	
+
+</div>
+
+<div id="left-column">
+	<h2>ccPlayer Help</h2>
+	
+	<!-- #bbinclude "helpnav.incl" -->
+	<ul>
+		<li><a href="ccplayer-sample.html">ccPlayer Examples</a></li>
+		<li><a href="ccplayer-features.html">ccPlayer New<br />Features</a></li>
+		<li><a href="ccplayer-embed.html">Embedding ccPlayer <br />on a Web Page</a></li>
+		<li><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a></li>
+		<li><a href="ccplayer-accessibility.html">ccPlayer Accessibility Features</a></li>
+		<li><a href="ccplayer-custom.html">Customizing ccPlayer</a></li>
+		<li><a href="ccplayer-controls.html">Creating ccPlayer<br />Customized Controls</a></li>
+		<li><a href="ccplayer-swfembed.html">Embedding ccPlayer<br />Inside Another SWF</a></li>
+		<li><a href="authoringcapts.html">Authoring Captions <br />for Flash</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+</div>
+
+<div id="main-content">	
+
+	<div id="int-content"><a name="top" id="top"></a>
+		
+		<h1 class="mn">ccPlayer Accessibility Features</h1>
+		
+		<p>Various accessibility features have been built into the ccPlayer, which include:</p>
+		<ul>
+			<li>closed captioning</li>
+			<li>screen reader access of controls</li>
+			<li>keyboard access of controls</li>
+		</ul>
+
+		<h2>Closed Captioning</h2>	
+		
+		<p>Closed captioning is available, if captions have been provided with the video. Captions can be provided in an external file using either the <a href="http://www.w3.org/TR/2009/CR-ttaf1-dfxp-20090924/">DFXP</a> or <a href="http://www.apple.com/quicktime/tutorials/textdescriptors.html">QTtext</a> formats or embedded within the video using a tool such as <a href="http://www.buraks.com/captionate/">Captionate</a>. When captions are available, a CC button is displayed allowing viewers to hide or show the captions. If captions are not available, the button is disabled.</p>
+		
+		<p><a href="authoringcapts.html">Authoring Captions for Flash</a> provides additional information on creating captions for use in Flash-based projects.
+		
+		<h2>Keyboard and Screen Reader Access</h2>
+		
+		<p>Providing Flash content which is accessible to keyboard and screen reader users means that all of the functions of the player can be accessed using only the keyboard. Keyboard users must be able to navigate through the Flash content by tabbing from one control to another. However, in order to do this, the user must be able to tab into the Flash object. Currently, both IE and Firefox do allow keyboard users to tab into Flash content. However, Firefox does not allow the keyboard user to tab back out, thus trapping the user inside the Flash object. Until the Firefox bug is fixed, true keyboard access is only reliable with Internet Explorer.</p>
+		
+		<p>In order for screen-reader users to be able to navigate the Flash content, each interactive control needs to have a label which is read by the screen-reading software. Due to Flash's use of Microsoft's accessibility structure (MSAA), Flash content is currently only readable with screen-reading software running on the Windows platform.</p>
+		
+		<p>ccPlayer uses the following labels on its controls:</p>
+		
+		<ul>
+			<li>play</li>
+			<li>pause</li>
+			<li>stop</li>
+			<li>rewind five seconds</li>
+			<li>forward five seconds</li>
+			<li>hide captions</li>
+			<li>show captions</li>
+			<li>volume down</li>
+			<li>volume up</li>
+			<li>search window</li>
+			<li>caption language window</li>
+			<li>instructions window</li>
+			<li>show fullscreen video</li>
+		</ul>    
+		
+		<h2>Keyboard Shortcuts</h2>
+		
+		<p>In order to use the keyboard shortcuts, the Flash object needs to have focus. This is typically done by tabbing into the Flash content and pressing the enter key or spacebar. Screen-reader users will need to have the virtual pc cursor mode off to access the keyboard shortcuts.</p> 
+		
+		<p>The following keyboard shortcuts are available:</p>
+		
+		<ul>
+		   <li>p &ndash; play/pause</li>
+		   <li>e &ndash; end (stop)</li>
+		   <li>r &ndash; rewind 5 seconds</li>
+		   <li>f &ndash; forward 5 seconds</li>
+		   <li>u &ndash; volume up 20 percent</li>
+		   <li>d &ndash; volume down 20 percent</li>
+		   <li>c &ndash; captions on/off</li>		
+		   <li>m &ndash; full-screen video</li>		
+		   <li>i &ndash; instruction window</li>
+		   <li>s &ndash; search captions for text strings</li>		
+		   <li>l &ndash; select language</li>		
+		</ul>
+		
+		<h2>Accessible Media Scrubbing</h2>
+		
+		<p>The most difficult controls to make accessible are scrub bars for media playback and volume control. In order to allow keyboard users access to these controls, the following buttons have been included in the default controls:</p>
+		
+		<ul>
+			<li>rewind 5 seconds</li>
+			<li>forward 5 seconds</li>
+			<li>volume up</li>
+			<li>volume down</li>		
+		</ul>
+		
+		<p>When implementing customized controls, it may be desirable to reduce the number of buttons contained within the control area. In this case, ccPlayer has a special feature where the forward and reverse buttons are contained within the scrub bar's main button. In this case, the buttons are not visible until the scrub bar button is tabbed to using the keyboard. See <a href="ccplayer-controls.html">Creating ccPlayer Customized Controls</a> for information on how to do this.</p>
+		
+		<h2>Accessibility With Custom Controls</h2>
+		
+		<p>The customized controls feature has been built to maintain the accessibility features built into the default controls. </p>
+		
+		<h3>Screen-reader Access of the Search Window</h3>
+		<p>While the search window is open, ccPlayer limits tabbing to only the contents inside the window. There are three objects in this window: the search edit text box for the search term, the search activation button, and the close search window button. In our JAWS testing, it was noted that if the user tabbed past the close search window button, the next button outside of the window was read, even though the focus had returned to the search edit text box. If this occurs, shift-tab will correctly speak the contents of the window.</p>
+
+		<h3>Screen-reader Access of the Caption Language Window</h3>
+		<p>When the caption language window is opened, the focus goes to the language that is currently being played in the captions. If additional languages are available, these languages can be found by using the up and down arrow keys. In this window, the tab key serves to select the currently-highlighted language. The escape key will close the window without changing the current language.</p>
+
+		<h3>Screen-reader Access of the Instructions Window</h3>
+		<p>In order to read the instructions, the screen-reader must be in virtual pc cursor mode. The instructions appear after the the close instructions window button.</p>
+		
+		<h3>Audio Descriptions</h3>
+		<p>Currently, ccPlayer does not have the means to playback audio descriptions that are contained within external mp3 audio files. In addition, Flash video is not able to contain more than one sound track. The recommended means of providing audio descriptions is to provide two versions of the video, one with the main sound track and one where the audio descriptions have been dubbed into the main sound track.</p>
+
+		<h2>Known Issues</h2>
+
+		<p><span class="bd">Flash accessibility on Mac and Unix platforms</span> &ndash; Flash content is not accessible to VoiceOver users on the Mac platform or Unix users.</p>
+
+		<p><span class="bd">Firebox keyboard navigation</span> &ndash; Firefox currently traps keyboard users who have tabbed into Flash content.</p>
+
+		<p><span class="bd">Accessibility in fullscreen mode</span> &ndash; The video playback controls in the fullscreen mode are not accessible to keyboard and screen-reader users. Keyboard control is limited to exiting the fullscreen mode using the Escape key. Note that full-screen mode does not function properly unless the virtual pc cursor in JAWS is off. The full-screen mode has not been tested with Window-Eyes.</p>
+		<p><span class="bd">JAWS 9 and dynamically changing text</span> &ndash; Users of JAWS 9 may notice that dynamically-changing text will be read when the change occurs. This will be most noticeable each time a new caption appears. To stop JAWS from reading the captions, use the hide captions button to hide the caption display.</p>
+
+		<p id="lastup">Last updated: October 14, 2009</p>
+
+	</div>
+
+</div>
+
+
+<div id="footer">
+
+<!-- #bbinclude "footer.incl" -->
+	<p><a href="http://ncam.wgbh.org">NCAM</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/">CCforFlash</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html">ccPlayer</a> | <a href="http://ncam.wgbh.org/webaccess/magpie/index.html">MAGpie</a> | <a href="ccforflash-community.html">Community Help</a> | <a href="http://www.wgbh.org">WGBH</a><br />
+	NCAM is part of the <a href="http://access.wgbh.org/">Media Access Group at WGBH</a></p>
+<!-- end bbinclude -->
+
+</div>
+
+</body>
+</html>

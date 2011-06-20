@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Authoring Captions for Flash &ndash; NCAM</title>
+	
+	<link rel="stylesheet" href="c/ccplayer.css" media="all" type="text/css" />
+	
+	
+</head>
+<body>
+<p id="skipper"><a href="#top" accesskey="8" tabindex="1">Skip to Content</a></p>
+
+<div id="header">
+	<a href="http://ncam.wgbh.org" id="ncam-home-link" accesskey="1" tabindex="2"><img class="img-logo" src="
+	i/ncam_logo_sm.jpg" alt="The WGBH / NCAM / National Center for Accessible Media" width="388" height="78" /></a>
+	
+<!-- #bbinclude "topnav.incl" -->
+	<ul id="site-nav">
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/" accesskey="5" tabindex="3">CCforFlash</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html" accesskey="6" tabindex="4">ccPlayer</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/magpie/index.html" accesskey="6" tabindex="4">MAGpie</a></li>
+		<li><a href="ccforflash-community.html" tabindex="6">Community Help</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+	<div id="main-nav">
+		<img src="i/sp.png" width="100%" height="28" />
+	</div>	
+
+</div>
+
+<div id="left-column">
+	<h2>ccPlayer Help</h2>
+	
+	<!-- #bbinclude "helpnav.incl" -->
+	<ul>
+		<li><a href="ccplayer-sample.html">ccPlayer Examples</a></li>
+		<li><a href="ccplayer-features.html">ccPlayer New<br />Features</a></li>
+		<li><a href="ccplayer-embed.html">Embedding ccPlayer <br />on a Web Page</a></li>
+		<li><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a></li>
+		<li><a href="ccplayer-accessibility.html">ccPlayer Accessibility Features</a></li>
+		<li><a href="ccplayer-custom.html">Customizing ccPlayer</a></li>
+		<li><a href="ccplayer-controls.html">Creating ccPlayer<br />Customized Controls</a></li>
+		<li><a href="ccplayer-swfembed.html">Embedding ccPlayer<br />Inside Another SWF</a></li>
+		<li><a href="authoringcapts.html">Authoring Captions <br />for Flash</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+</div>
+
+<div id="main-content">	
+
+	<div id="int-content"><a name="top" id="top"></a>
+		
+		<h1 class="mn">Authoring Captions for Flash</h1>
+		
+		<h2>Choosing an authoring environment</h2>
+		<p>There are a number of ways to create caption content. One factor to consider is how the captions will be stored. The following options are available for captions recognized by CCforFlash, ccPlayer, and ccMP3Player:</p>
+		<ul>
+    		<li>embedded in the FLV (CCforFlash and ccPlayer only)</li>
+    		<li>external text file</li>
+    		<li>internal text object (CCforFlash only)</li>
+		</ul>
+		<p>If the caption information is to be embedded within the Flash video (FLV) file, a special authoring program, such as <a href="http://www.captionate.com">Captionate</a> is used. If the caption information is to be stored in an external text file or internal text object, the caption content will need to be structured in a timed-text format. The two current formats CCforFlash, ccPlayer and ccMP3Player recognize are:</p>
+		<ul>
+   			<li><a href="http://www.w3.org/TR/2006/CR-ttaf1-dfxp-20061116/">DFXP, Timed Text (TT) Authoring Format 1.0 &ndash; Distribution Format Exchange Profile</a></li>
+    		<li><a href="http://www.apple.com/quicktime/tutorials/textdescriptors.html">QTtext, Quicktime Text descriptor &ndash; timed-text format used by Apple QuickTime player</a></li>
+		</ul>
+		<p>If you are familiar with either of these formats, you can use a text editor to create the caption content yourself. However, it is extremely important that you use an editor that saves your file with UTF-8 encoding or some of your characters may not be displayed properly.</p>
+		<p>The difficulty with using a text editor is that you need to provide the starting (and sometimes ending) timecode when the caption will be displayed. You could use a video player that displays the playback time to determine what the starting times would be and then go back and add them to the caption file. However, programs are available, such as the <a href="http://ncam.wgbh.org/webaccess/magpie/">Media Access Generator (MAGpie)</a>, which combines a text editor with video playback, so setting the start and end times for a caption to be displayed is much easier.</p>
+
+		<h2>Adding captions with MAGpie</h2>
+		<h3>Flash Video</h3>
+		<p>Currently, MAGpie does not playback FLV video types. In order to caption Flash videos, the author needs to save their movie in an intermediate format, such as .mov or .avi, which is imported into MAGpie. Once the video has been captioned, the caption file can be exported in either the DFXP or QTtext caption formats. The FLV video is then used for playback with the accompanying caption file.</p>
+
+		<h3>MP3</h3>
+		<p>While MAGpie will import an MP3 file for captioning, some users have noticed that after authoring the captions, the timing lags when played back in a Flash SWF or the ccMP3Player. The problem appears to be within MAGpie. The solution is to use QuickTime to convert your MP3 file to a .wav file and import that file into MAGpie. The exported caption file can then be used with the original MP3 file.</p>
+
+		<h3>Flash SWF</h3>
+		<p>Captions can only be synchronized to the timeline of Flash movies that are linear. At this time, MAGpie is unable to import Flash SWF file types. Flash does have an export to movie that allows the Flash movie to be exported as a QuickTime .mov file (or Windows .avi on the PC). The exported movie can be imported into MAGpie.</p><p>Another, more time-consuming method, would be to author the captions in a text editor and determine the timing by dividing the frame number where the caption would appear by the frames per second of the movie.</p>
+		<p>Caption to appear at frame <span class="bd">235</span><br />
+		Frame rate of movie is <span class="bd">12 frames per second</span><br />
+		Start time of the caption is:<br />
+		<span class="bd">235/12 = 19.58 seconds</span></p>
+
+		<h2>Styling captions</h2>
+		<p>DFXP-formatted captions can contain style settings either globally in the &lt;body&gt;, &lt;div&gt;, or &lt;p&gt; tags or inline using the &lt;span&gt; tag. At this time, QTtext styles are only recognized globally. Inline QTtext styles are ignored. </p>
+
+		<h2>Internal captions via ActionScript</h2>
+		<p>In order to house the caption content inside ActionScript, all line breaks need to be removed from the caption content and any quotation marks should be escaped using the backslash. A sample of an internal DFXP caption text string is shown below:</p>
+
+		<p class="code">var _captStr:String="&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;tt xml:lang=\"en\" xmlns=\"http://www.w3.org/2006/04/ttaf1\" xmlns:tts=\"http://www.w3.org/2006/04/ttaf1#styling\"&gt;&lt;head&gt;&lt;styling&gt;&lt;style id=\"b1\" tts:fontWeight=\"normal\" tts:color=\"#cccc00\"/&gt;&lt;/styling&gt;&lt;/head&gt;&lt;body&gt;&lt;div xml:lang=\"en\" style=\"b1\"&gt;&lt;p begin=\"00:01.00\" end=\"00:03.00\"&gt;The first caption.&lt;/p&gt;&lt;p begin=\"00:03.00\" end=\"00:05.00\"&gt;The second caption.&lt;/p&gt;&lt;p begin=\"00:06.00\" end=\"00:10.00\"&gt;The third caption.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/tt&gt;"</p>
+
+
+		<h2>Caption display options</h2>
+		<p><span="bd">Please note:</span> The means to change the display option can only be done via the API of CCforFlash, ccPlayer, or ccMP3Player.</p>
+
+		<h3>Pop-on caption display option</h3>
+		<p>The pop-on caption display mode is most widely used for Web-based video content. In this mode, each caption replaces the preceding one. Captions can be any number of lines that will fit in the caption area, dependent on the style settings of the caption. If there is a long pause between captions, an end time may be added which would clear the caption area sooner. All caption storage options (embedded, external, and internal) are able to display pop-on captions.</p>
+
+		<h3>Roll-up caption display option</h3>
+		<p>The roll-up caption display option allows for captions to be displayed similar to the captioning done for broadcast television. Each caption is rolled up a line as the next one appears. In this mode, any end times or durations are ignored. Each caption is limited to a single line based on the style settings. The caption area is cleared by inserting a blank caption at the time when the display should be cleared. Embedded captions cannot be displayed in roll-up mode.</p>
+
+		<p id="lastup">Last updated: October 14, 2009</p>
+
+	</div>
+
+</div>
+
+
+<div id="footer">
+
+<!-- #bbinclude "footer.incl" -->
+	<p><a href="http://ncam.wgbh.org">NCAM</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/">CCforFlash</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html">ccPlayer</a> | <a href="http://ncam.wgbh.org/webaccess/magpie/index.html">MAGpie</a> | <a href="ccforflash-community.html">Community Help</a> | <a href="http://www.wgbh.org">WGBH</a><br />
+	NCAM is part of the <a href="http://access.wgbh.org/">Media Access Group at WGBH</a></p>
+<!-- end bbinclude -->
+
+</div>
+
+</body>
+</html>

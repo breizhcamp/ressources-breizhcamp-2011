@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Creating ccPlayer Customized Controls &ndash; NCAM</title>
+	
+	<link rel="stylesheet" href="c/ccplayer.css" media="all" type="text/css" />
+	
+	
+</head>
+<body>
+<p id="skipper"><a href="#top" accesskey="8" tabindex="1">Skip to Content</a></p>
+
+<div id="header">
+	<a href="http://ncam.wgbh.org" id="ncam-home-link" accesskey="1" tabindex="2"><img class="img-logo" src="
+	i/ncam_logo_sm.jpg" alt="The WGBH / NCAM / National Center for Accessible Media" width="388" height="78" /></a>
+	
+<!-- #bbinclude "topnav.incl" -->
+	<ul id="site-nav">
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/" accesskey="5" tabindex="3">CCforFlash</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html" accesskey="6" tabindex="4">ccPlayer</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/magpie/index.html" accesskey="6" tabindex="4">MAGpie</a></li>
+		<li><a href="ccforflash-community.html" tabindex="6">Community Help</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+	<div id="main-nav">
+		<img src="i/sp.png" width="100%" height="28" />
+	</div>	
+
+</div>
+
+<div id="left-column">
+	<h2>ccPlayer Help</h2>
+	
+	<!-- #bbinclude "helpnav.incl" -->
+	<ul>
+		<li><a href="ccplayer-sample.html">ccPlayer Examples</a></li>
+		<li><a href="ccplayer-features.html">ccPlayer New<br />Features</a></li>
+		<li><a href="ccplayer-embed.html">Embedding ccPlayer <br />on a Web Page</a></li>
+		<li><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a></li>
+		<li><a href="ccplayer-accessibility.html">ccPlayer Accessibility Features</a></li>
+		<li><a href="ccplayer-custom.html">Customizing ccPlayer</a></li>
+		<li><a href="ccplayer-controls.html">Creating ccPlayer<br />Customized Controls</a></li>
+		<li><a href="ccplayer-swfembed.html">Embedding ccPlayer<br />Inside Another SWF</a></li>
+		<li><a href="authoringcapts.html">Authoring Captions <br />for Flash</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+</div>
+
+<div id="main-content">	
+
+	<div id="int-content"><a name="top" id="top"></a>
+		
+		<h1 class="mn">Creating ccPlayer Customized Controls</h1>
+		
+		<p>All of the controls in ccPlayer can be customized, but it is not necessary to include every control that comes with the default controls. For example, if the multiple language feature for captions is not being used, the language button does not need to be included in the customized controls. In fact, there is just one object that is required when customized controls are used, the background movieclip. This is used by ccPlayer to determine the width of the player.</p>
+		
+		<p>In order for the customized controls to work, they must be given the same instance names as their counterparts in the default. This also maintains the accessibility features built into ccPlayer. In addition, certain objects, such as those used by the scrub bar area, need to reside in the same hierarchy of movie clips that is used by the default controls. To provide a starting point, the authoring files for both the default controls and a sample of customized controls have been included in ccPlayer's download package.</p>
+		
+		<p>The following information provides the instance name of the object and how it is used. In some cases the object will need to be nested inside another object. Because ccPlayer is expecting to find certain objects nested inside other objects, nesting hierarchy must be maintained.</p>
+
+		<h2>Background - required when custom controls are used</h2>
+		<p><span class="bd">controlBGMC</span> (movieclip) - This is the only required element. ccPlayer uses this to help define the width of the player. If the media is wider than the controls, this movieclip is increased in width to fit the player from edge to edge. Therefore, it is important not to include graphics which may become distorted when scaled. In addition, the movieclip needs to have an orientation of 0,0 for it to be positioned correctly.</p>
+		
+		<h2>General Buttons - optional</h2>
+		<p>All of the buttons work as typical buttons with up, over, and down states. When building the buttons from scratch, each of the states is optional. Any state that is included, needs to have its frame labeled accordingly: "up", "over", or "down". 
+
+		<p><span class="bd">playBT</span> (movieclip) - button, used to play the media.</p>
+		<p><span class="bd">pauseBT</span> (movieclip) - button, used to pause the media.</p>
+		<p><span class="bd">stopBT</span> (movieclip) - button, used to stop and return to the beginning of the media.</p>
+		<p><span class="bd">rewindBT</span> (movieclip) - button, used to rewind the media five seconds.</p>
+		<p><span class="bd">forwardBT</span> (movieclip) - button, used to forward the media five seconds.</p>
+		<p><span class="bd">cconBT</span> (movieclip) - button, indicates captions are on, used to turn captions off.</p>
+		<p><span class="bd">ccoffBT</span> (movieclip) - button, indicates captions are off, used to turn captions on.</p>
+		<p><span class="bd">ccnoneMC</span> (movieclip) - graphic used to indicate there are no captions available for this media.</p>
+		
+		<h2>Special buttons - optional</h2>
+		
+		<p><span class="bd">fullscreenBT</span> (movieclip) - button, used to switch the view to fullscreen mode.</p>
+		<p><span class="bd">normalscreenBT</span> (movieclip) - button, used to return the view to normal viewing mode.</p>
+		<p><span class="bd">searBT</span> (movieclip) - button, used to open the search window containing the search captions feature.</p>
+		<p><span class="bd">langBT</span> (movieclip) - button, used to open the language window containing the caption language selector.</p>
+		<p><span class="bd">instBT</span> (movieclip) - button, used to open the instructions window, which lists the keyboard shortcuts for the player.</p>
+
+		<h2>Tool tips for Special Buttons</h2>
+		
+		<p>Each of the special buttons (fullscreenBT, normalscreenBT, searBT, langBT, and instBT) has a tool tip naming its function. The implementation of these tool tips is a little more complex than what is typical. Putting the tool tip in the "over" frame of the button movieclip, does not ensure that the tool tip disappears when a keyboard user activates the button and moves the focus to another area.</p> 
+
+		<p>In order to be implemented properly, all of the tool tips reside within the button they reference on the layer labeled "tip". This layer is active in all states of the button (up, over, and down). However, there is ActionScript code placed in the frames of each of the states either hiding (fullscreenTipMC.visible=false;) or showing the tool tip (fullscreenTipMC.visible=true;). Additional coding has been placed in ccPlayer's controls class that also hides the tool tips when necessary.</p>
+
+		<p><span class="bd">fullscreenTipMC</span> (movieclip) - used to label the fullscreen button.</p>
+		<p><span class="bd">normalscreenTipMC</span> (movieclip) - used to label the normal screen button.</p>
+		<p><span class="bd">searchTipMC</span> (movieclip) - used to label the search screen button.</p>
+		<p><span class="bd">languageTipMC</span> (movieclip) - used to label the language screen button.</p>
+		<p><span class="bd">instructionsTipMC</span> (movieclip) - used to label the instructions screen button.</p>
+
+		<h2>Poster button - optional</h2>	
+		<p><span class="bd">posterIcon</span> (movieclip) - used to display an icon, such as a play arrow, that would appear on top of all of the poster images.</p>
+		
+		<h2>Volume area - optional</h2>
+		<p>In order to ensure the volume controls are accessible to screen-reader and keyboard users, buttons are provided for raising and lowering the volume. When either of these buttons is pressed, the volume is raised or lowered by 20 percent.</p>
+		
+		<p><span class="bd">volumeUpBT</span> (movieclip) - button, used to raise the volume by 20 percent.</p>
+		<p><span class="bd">volumeDownBT</span> (movieclip) - button, used to lower the volume by 20 percent.</p>
+
+		<p>The volume controls include a graphic display which shows the current volume level. Since there are six levels (0%, 20%, 40%, 60%, 80% and 100%) available, the volume display movieclip is divided into six frames each of which will display the graphics for that level. The frames must be labeled:</p>
+
+			<ul>
+				<li>level0</li>
+				<li>level20</li>
+				<li>level40</li>
+				<li>level60</li>
+				<li>level80</li>
+				<li>level100</li>
+			</ul>
+
+		<p><span class="bd">volumeDisplayMC</span> (movieclip) - graphic movieclip, used to display each of the six volume levels.</p>
+
+		<h2>Time display - optional</h2>
+		<p>A parent movieclip is used to hold the time display content. It has two functions: </p>
+			<ul>
+				<li>hold the textfields used to display various time codes</li>
+				<li>provide an object which is used to provide screen readers users the time and media loading information</li>
+			</ul>
+		<p><span class="bd">timeArea</span> (movieclip) - parent movieclip used to hold the time-related textfields and provide time and media loading information to screen-reader users.*</p>
+
+		<p>*Reading the timecode from a textfield does not provide a screen-reader user with the context of the time (could be duration, could be time left). By hiding the textfields and copying their contents into a string which can be read as the accessibility label on the timeArea object, the user has a better understanding of the time reference. In ccPlayer, the information is presented as: "playhead at 5 seconds, time remaining 15 seconds, 85 percent loaded"</p>
+
+		<p>There are three time-related textfields which can reside in the <span class="bd">timeArea</span> parent movieclip:</p>
+
+		<p><span class="bd">currentTimeText</span> (textfield) - used to display the timecode of the current position of the media (format 00:00:00).</p>
+		<p><span class="bd">timeLeftText</span> (textfield) - used to display the time remaining from the current position of media (format 00:00:00)</p>
+		<p><span class="bd">totalTimeText</span> (textfield) - used to display the duration of the media (format 00:00:00).</p>
+
+
+		<a name="scrubcont"></a><h2>Scrub bar - optional</h2>
+		<p><span class="bd">scrubberMC</span> (movieclip) - parent movieclip used to hold the various scrub bar objects:</p>
+			<ul>
+				<li>background</li>
+				<li>loading progress bar</li>
+				<li>scrub bar button</li>
+			</ul>
+		<p>Scrub bar objects:</p>
+
+		<p><span class="bd">scrubberBGMC</span> (movieclip) - (required when the scrub bar is used in customized controls) used to not only display the background of the scrub bar area behind the progress bar, but also to determine the proper scaling of the progress bar and positioning of the scrub bar button.</p>
+		<p><span class="bd">progressBarMC</span> (movieclip) - used to display the percentage of the media that has been loaded. When used with media being streamed from a media server, displays 100 percent loaded.</p>
+		<p><span class="bd">scrubberBT</span> (movieclip) - used to hold the objects that are used to drag or jump the media to a different play point. <span class="br">IN ORDER FOR SCRUBBING TO WORK THE scrubberActiveBT OBJECT MUST BE INCLUDED INSIDE THIS MOVIECLIP. See below.</span></p>
+		
+		<p><span class="bd">scrubberActiveBT</span> (movieclip) - button, used to drag the media to a different play point. <span class="br">MUST BE INCLUDED FOR SCRUBBING TO WORK.</span></p>
+		
+
+		<a name="specscrub"></a><h2>Special scrub bar accessibility feature</h2>
+		<p>The <span class="bd">scrubberBT</span> button can house a special object &ndash; <span class="bd">scrubberActiveMC</span> &ndash; inside that allows keyboard and screen-reader users to scrub or jump to various areas in the media. Since the <span class="bd">scrubberActiveMC</span> is housed inside the <span class="bd">scrubberBT</span>, it is not activated by someone who is using the mouse to drag around the scrub bar.</p>
+
+		<p>The first way the <span class="bd">scrubberActiveMC</span> is used is to allow keyboard users to use shortcut keys to scrub the media. This is done by tabbing to the <span class="bd">scrubberActiveMC</span> object and, when it is highlighted, the user can press the period (.) key to scrub the media forward and the comma key (,) to scrub the media backwards.</p>
+
+		<p>The other way the <span class="bd">scrubberActiveMC</span> can be used is to house the forward and reverse buttons. In cases, where there is not enough room to include the forward and reverse buttons in the controls, these buttons can be placed inside the <span class="bd">scrubberBT</span> button. They are not visible unless the <span class="bd">scrubberActiveMC</span> has focus. When it has focus, the buttons appear. Once the user tabs past the forward button on the right the buttons are once again hidden. An example of this can be found in the <a href="ccplayer-sample.html#mp3demo">mp3 demo with customized controls on the ccPlayer Sample</a> page.</p>
+
+		<div id="scrdisplay">
+			<div id="scrleft">
+				Does not have focus<br />
+				<img src="i/scracc_hide.png" width="266" height="130" alt="scrub bar button with forward and reverse buttons hidden" />
+			</div>
+			<div id="scrright">
+				Has focus<br />
+				<img src="i/scracc_show.png" width="266" height="130" alt="scrub bar button with forward and reverse buttons showing on either side" />
+			</div>
+
+		</div>
+
+		<p>To set this up properly, the <span class="bd">scrubberActiveMC</span> object, reverse button, and forward button must be housed inside the <span class="bd">scrubberBT</span> button. This has been built into the <span class="bd">customizesample.fla</span>, which can be used for reference.</p>
+		
+		<p><span class="bd">scrubberActiveMC</span> (movieclip) - used to trigger the shortcut keys for scrubbing and the forward and reverse button display, if desired.</p>
+		<p><span class="bd">forwardScrubBT</span> (movieclip) - button, used to forward the media 5 seconds.</p>
+		<p><span class="bd">rewindScrubBT</span> (movieclip) - button, used to rewind the media 5 seconds.</p>
+
+
+		<p id="lastup">Last updated: January 30, 2010</p>
+
+	</div>
+
+</div>
+
+
+<div id="footer">
+
+<!-- #bbinclude "footer.incl" -->
+	<p><a href="http://ncam.wgbh.org">NCAM</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/">CCforFlash</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html">ccPlayer</a> | <a href="http://ncam.wgbh.org/webaccess/magpie/index.html">MAGpie</a> | <a href="ccforflash-community.html">Community Help</a> | <a href="http://www.wgbh.org">WGBH</a><br />
+	NCAM is part of the <a href="http://access.wgbh.org/">Media Access Group at WGBH</a></p>
+<!-- end bbinclude -->
+
+</div>
+
+</body>
+</html>

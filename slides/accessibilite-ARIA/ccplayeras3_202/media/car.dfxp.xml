@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+  <head>
+        <styling>
+            <style id="b1" tts:fontWeight="normal" tts:color="#cccc00"/>
+       </styling>
+  </head>
+ 
+  <body>
+    <div xml:lang="en" style="b1">
+            <p begin="00:01.7" end="00:05.0">Narrator:  Someone watching a car<br/>accelerate toward light speed</p>
+            <p begin="00:05.0" end="00:07.4">would see something<br/>very strange.</p>
+            <p begin="00:07.4" end="00:10.5">It would seem as though the<br/>car itself were getting shorter</p>
+            <p begin="00:10.5" end="00:14.4">and that time for the person<br/>in the car was slowing down.</p>
+            <p begin="00:14.4" end="00:17.3">However, you wouldn't<br/>see these effects</p>
+            <p begin="00:17.3" end="00:20.6">until the car began to<br/>approach the speed of light.</p>
+            <p begin="00:20.6" end="00:23.0">At 90% of the speed of light</p>
+            <p begin="00:23.0" end="00:28.6">the car would appear to shrink<br/>to 44% of its usual length.</p>
+            <p begin="00:28.6" end="00:30.2">This thought experiment</p>
+            <p begin="00:30.2" end="00:32.5">answered Einstein's<br/>old question</p>
+            <p begin="00:32.5" end="00:33.9">about what he would see</p>
+            <p begin="00:33.9" end="00:36.3">if he traveled along<br/>with a beam of light.</p>
+            <p begin="00:36.3" end="00:38.4">He simply couldn't<br/>make the trip</p>
+            <p begin="00:38.4" end="00:42.1">for at the speed of light,<br/>length would contract to zero</p>
+            <p begin="00:42.1" end="00:44.5">and time would stop.</p>
+   </div>
+    <div xml:lang="es" style="b1">
+            <p begin="00:01.7" end="00:05.0">Narrador:  Si se observara a un auto<br/>acelerando a la velocidad de la luz</p>
+            <p begin="00:05.0" end="00:07.4">se vería algo muy extraño.</p>
+            <p begin="00:07.4" end="00:10.5">Parecería como si el mismo<br/>auto estuviera encogiendo</p>
+            <p begin="00:10.5" end="00:14.4">y como si el tiempo pasase más<br/>lento para la persona del auto.</p>
+            <p begin="00:14.4" end="00:17.3">Pero no vería estos efectos</p>
+            <p begin="00:17.3" end="00:20.6">hasta que el auto empezase a<br/>acercarse a la velocidad de la luz.</p>
+            <p begin="00:20.6" end="00:23.0">Al 90% de la velocidad de la luz,</p>
+            <p begin="00:23.0" end="00:28.6">el auto parecería encogerse hasta<br/>el 44% de su longitud normal.</p>
+            <p begin="00:28.6" end="00:30.2">Este experimento fue la respuesta</p>
+            <p begin="00:30.2" end="00:32.5">a una vieja pregunta de Einstein</p>
+            <p begin="00:32.5" end="00:33.9">sobre lo que vería</p>
+            <p begin="00:33.9" end="00:36.3">si viajase a la velocidad de<br/>un rayo de luz.</p>
+            <p begin="00:36.3" end="00:38.4">Simplemente no podría<br/>hacer el viaje</p>
+            <p begin="00:38.4" end="00:42.1">porque a la velocidad de la luz, <br/>la longitud se reduciría a cero,</p>
+            <p begin="00:42.1" end="00:44.5">y se detendría el tiempo.</p>
+    </div>
+    <div xml:lang="de" style="b1">
+            <p begin="00:01.7" end="00:03.4">Sprecher:<br/>Wer ein Auto beobachtet</p>
+            <p begin="00:03.4" end="00:05.9">das bis fast Licht -<br/>geschwindigkeit beschleunigt</p>
+            <p begin="00:05.9" end="00:07.4">würde etwas<br/>sehr seltsames sehen.</p>
+            <p begin="00:07.4" end="00:10.5">Es würde ihm vorkommen,<br/>als ob das Auto kürzer wird</p>
+            <p begin="00:10.5" end="00:12.2">dem Autofahrer dagegen<br/>schiene es</p>
+            <p begin="00:12.2" end="00:14.4">daß die Zeit langsamer ablauft.</p>
+            <p begin="00:14.4" end="00:17.7">Dieses würde sich aber<br/>erst dann bemerkbar machen</p>
+            <p begin="00:17.7" end="00:20.6">wenn das Auto in die Nähe<br/>der Lichtgeschwindigkeit kommt.</p>
+            <p begin="00:20.6" end="00:23.0">Bei 90% der<br/>Lichtgeschwindigkeit</p>
+            <p begin="00:23.0" end="00:28.0">würde das Auto bis auf 44% seiner normalen Länge schrumpfen.</p>
+            <p begin="00:28.0" end="00:30.2">Dieses Gedankenexperiment<br/>antwortete</p>
+            <p begin="00:30.2" end="00:33.9">auf Einsteins alte Frage<br/>was er wohl sehen würde</p>
+            <p begin="00:33.9" end="00:36.3">wenn er auf einem<br/>Lichtstrahl mitreiste.</p>
+            <p begin="00:36.3" end="00:38.4">Doch solch eine Reise<br/>ist unmöglich</p>
+            <p begin="00:38.4" end="00:40.1">denn bei<br/>Lichtgeschwindigkeit</p>
+            <p begin="00:40.1" end="00:42.0">würde die Länge<br/>auf Null schrumpfen</p>
+            <p begin="00:42.0" end="00:44.5">und die Zeit<br/>würde stille stehen.</p>
+    </div>
+  </body>
+</tt>

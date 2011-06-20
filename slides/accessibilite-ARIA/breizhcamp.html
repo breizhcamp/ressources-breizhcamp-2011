@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta name="generator" content="Bluefish 2.0.2" />
+<title>BreizhCamp - accessibilité et interfaces riches</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content=
+"Softeam - Renan Michaud" />
+<meta name="duration" content="50" />
+<meta name="font-size-adjustment" content="+2" />
+<link rel="stylesheet" href="styles/slidy.css" type="text/css" />
+<link rel="stylesheet" href="styles/softeam.css" type="text/css" />
+<script src="scripts/slidy.js" charset="utf-8" type="text/javascript">
+</script>
+
+
+<script type="text/javascript" >
+var hidden = [];
+window.onload=function (){
+	initEltMasquable("cite01");
+};
+
+function initEltMasquable(id){
+	var el = document.getElementById(id);
+	w3c_slidy.add_class(el, "hidden");
+	w3c_slidy.add_class(el, "popin");
+	hidden[id] = true;
+	var lk = document.getElementById("lk"+id);
+	if(window.addEventListener){
+		lk.addEventListener("click", afficheQuote, false);
+	}
+	else{
+		lk.attachEvent("onclick", afficheQuote);
+	}
+}
+
+function afficheQuote(event){
+	var id = event.currentTarget.hash.substring(1);
+	var el = document.getElementById(id);
+	if(hidden[id]){
+		w3c_slidy.remove_class(el, "hidden");
+	}
+	else{
+		w3c_slidy.add_class(el, "hidden");
+	}
+	hidden[id] = !hidden[id];
+	return false;
+}
+</script>
+
+</head>
+<body>
+<div class="background"><img alt="" id="head-icon"
+src="graphics/softeam-logo-slide.png" /></div>
+
+<div class="background slanty">
+<!--<img src="graphics/w3c-logo-slanted.jpg" alt="slanted W3C logo" />-->
+</div>
+<!-- Page de titre -->
+<div class="slide cover title">
+  <!-- hidden style graphics to ensure they are saved with other content -->
+  <img class="hidden" src="graphics/bullet.png" alt="" />
+  <img class="hidden" src="graphics/fold.gif" alt="" />
+  <img class="hidden" src="graphics/unfold.gif" alt="" />
+  <img class="hidden" src="graphics/fold-dim.gif" alt="" />
+  <img class="hidden" src="graphics/nofold-dim.gif" alt="" />
+  <img class="hidden" src="graphics/unfold-dim.gif" alt="" />
+  <img class="hidden" src="graphics/bullet-fold.gif" alt="" />
+  <img class="hidden" src="graphics/bullet-unfold.gif" alt="" />
+  <img class="hidden" src="graphics/bullet-fold-dim.gif" alt="" />
+  <img class="hidden" src="graphics/bullet-nofold-dim.gif" alt="" />
+  <img class="hidden" src="graphics/bullet-unfold-dim.gif" alt="" />
+
+<img src="graphics/softeam-logo.gif" alt="Softeam"
+ class="cover" /><br clear="all" />
+<h1>Accessibilité et interfaces riches</h1>
+
+<p style="text-align:center"><a href="http://www.softeam.fr">Renan Michaud</a>,
+&lt;<a href="mailto:renan.michaud@softeam.fr">renan.michaud@softeam.fr</a>&gt;<br /><br /><br /><br />
+</p>
+</div>
+
+
+<!-- Slides de la présentation -->
+
+<!-- Page de plan -->
+<div class="slide">
+<h1>Plan</h1>
+<ul>
+	<li><p>Qu'est ce que l'accessibilité?</p>
+	<p style="font-size:80%;font-style:italic">Définition, recommandations, législations et utilisation</p>
+	</li>
+	<li><p>Les interfaces riches</p>
+	<p style="font-size:80%;font-style:italic"><acronym>WCAG</acronym> 2.0, Flex, <acronym>AJAX</acronym> et <acronym>ARIA</acronym></p>
+	</li>
+	<li><p>Application pour les projets</p>
+	<p style="font-size:80%;font-style:italic">HiJax, frameworks d'interfaces</p>
+	</li>
+</ul>
+</div>
+
+<!-- Partie 1 -->
+<div class="slide">
+<h1>Définition</h1>
+<blockquote lang="en" cite="http://www.w3.org/WAI/">The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.</blockquote>
+<blockquote lang="en" cite="http://www.w3.org/Consortium/mission">The social value of the Web is that it enables human communication, commerce, and opportunities to share knowledge. One of W3C's primary goals is to make these benefits available to all people, whatever their hardware, software, network infrastructure, native language, culture, geographical location, or physical or mental ability.</blockquote>
+<br />
+<p class="citesrc"><cite><span style="font-size:120%">Tim Berners-Lee</span>, directeur du W3C et inventeur du WWW</cite></p>
+</div>
+
+<div class="slide">
+<h1>Qui est concerné?</h1>
+<br />
+<ul>
+	<li><p>Les handicaps</p><br /></li>
+	<li><p>Le vieillissement: poldivyhandicap visuel, auditif, moteur et cognitif</p><br /></li>
+	<li><p>La maîtrise de la langue et de l'orthographe, l'illettrisme</p></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Recommandations</h1>
+<p>Portées par le <abbr>WAI</abbr> (<span lang="en">Web Accessibility Initiative</span>), lancée en 1997.</p>
+<dl>
+	<dt><abbr lang="en">WCAG</abbr> (<span lang="en">Web Content Accesisbility Guidelines</span>)</dt> 
+	<dd>Accessibilité des contenus web. <abbr>WCAG</abbr> 1.0 en 1999 et 2.0 le 11 décembre 2008.</dd>
+	<dt><abbr lang="en">UAAG</abbr> (<span lang="en">User Agent Accessibility Guidelines</span>)</dt>
+	<dd>Accessiblité des agents utilisateur (navigateurs). Version 1.0 publiée le 17 décembre 2002.</dd>
+	<dt><abbr lang="en">ATAG</abbr> (<span lang="en">Authoring Tool Accessibility Guidelines</span>)</dt>
+	<dd>Accessibilité des logiciels de créations de contenus web. Version 1.0 publiée le 3 février 2000. Certains critères peuvent être appliqués aux <abbr title="Content Management System" lang="en">CMS</abbr>.</dd>
+</dl>
+</div>
+
+<div class="slide">
+<h1>WAI-ARIA</h1>
+<br />
+<ul>
+	<li style="margin-bottom:1em"><span lang="en">Accessible Riche Internet Application</span></li>
+	<li style="margin-bottom:1em">informations sémantiques</li>
+	<li style="margin-bottom:1em">informations de structure</li>
+	<li style="margin-bottom:1em">comportement pour les différents widgets créé avec AJAX</li>
+	<li style="margin-bottom:1em"><span lang="en">Candidate Recommandation</span> depuis le 18 janvier 2011</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1 style="font-size:120%">Applications des recommandations</h1>
+<!--<p>Deux référentiels existent en France:</p>
+<br />
+<br />
+<dl>
+	<dt>Accessiweb:</dt>
+	<dd>Actuellement en version 2.1, porté par l'association Braillenet et sert notamment pour la labelisation Accessiweb.</dd>
+	<dt><abbr>RGAA</abbr></dt>
+	<dd>Actuellement en version 2.2.1, le Référentiel Général d'Accessibilité des Administrations et porté par la <abbr title="Direction Générale de la Modernisation de l'Etat">DGME</abbr>
+	et sert de référence pour la conformité législative.</dd>
+</dl>
+<br />
+<br />
+<p>Ces deux référentiels sont des applications des <abbr lang="en">WCAG</abbr> 2.0.</p>-->
+<div id="referentiels"><img src="screens/referentiels.png" alt="Les différents référentiels de chaque pays, Accessiweb 2.1 et RGAA pour la France, Section 508 pour les Etats-UNis et SGQRI 008 pour le Québec, sont des applications de WCAG 2.0" /></div>
+</div>
+
+<div class="slide">
+<h1>Législation</h1>
+<h2>Loi n° 2005-102 du 11 février 2005</h2>
+<ul style="font-size:80%">
+<li>Pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées.</li>
+<li>Article 47 : obligation d’accessibilité pour les services de communication publique en ligne.</li>
+</ul>
+<h2>Décret n° 2009-546 du 14 mai 2009</h2>
+<ul style="font-size:80%">
+	<li>Le référentiel précisant les règles d’accessibilité doit être défini par arrêté.</li>
+	<li>Délai d’adaptation de trois ans pour les collectivité territoriales et les établissements publics et de deux ans pour les services de l’&Eacute;tat.</li>
+</ul>
+<h2>Arrêté du 21 octobre 2009</h2>
+<ul style="font-size:80%">
+<li>Publication officielle du Référentiel Général d’Accessibilité des Administrations dit <abbr>RGAA</abbr>.</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Outils d'assistance technique</h1>
+<!--<p>Démonstration de jaws</p>-->
+<div class="video">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="800" height="704" id="ccPlayerAS3" align="middle"> 
+<!--<param name="allowScriptAccess" value="sameDomain" /> -->
+<param name="allowFullscreen" value="true" /> 
+<param name="movie" value="ccplayeras3_202/ccPlayerAS3.swf?ccMediaName=../videos/jaws.flv&ccMediaBufferTime=.5&ccMediaHeight=600&ccMediaWidth=800" /> 
+<param name="quality" value="high" /> 
+<param name="bgcolor" value="#ffffff" /> 
+
+<embed src="ccplayeras3_202/ccPlayerAS3.swf?ccMediaName=../videos/jaws.flv&ccMediaBufferTime=.5&ccMediaHeight=600&ccMediaWidth=800" allowFullscreen="true" width="800" height="704" name="ccPlayerAS3Sample" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+<p>Vidéo de démonstration de Jaws sur le site d'Accessiweb.</p> 
+</embed>
+</object>
+</div>
+</div>
+
+<!-- Partie 2 -->
+<div class="slide">
+<h1><abbr>WCAG</abbr> 2.0</h1>
+<ul>
+	<li><p>4 principes</p>
+		<ul>
+			<li>Perceptible</li>
+			<li>Utilisable</li>
+			<li>Compréhensible</li>
+			<li>Robuste</li>		
+		</ul>	
+	</li>
+	<li><p><a id="lkcite01" href="#cite01" title="Afficher/Masquer règle 1.1 des WCAG 2.0">Du point de vue <abbr>WCAG</abbr> 2.0: pas de technologie spécifique</a></p>
+		<div id="cite01">
+			<blockquote cite="http://www.w3.org/Translations/WCAG20-fr/#text-equiv">
+			Règle 1.1 Les équivalents textuels : proposer des équivalents textuels à tout contenu non textuel qui pourra alors être présenté
+			sous d'autres formes selon les besoins de l'utilisateur : grands caractères, braille, synthèse vocale, symboles ou langage simplifié.
+			</blockquote>
+		</div>
+	</li>
+	<li><p>Les référentiels sont des méthodes d'applications des <abbr>WCAG</abbr> 2.0</p></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Flex/Flash et l'accessibilité</h1>
+<h2>Possible !</h2>
+<ul>
+	<li>fournir les alternatives textuelles</li>
+	<li>gérer la navigation au clavier (ordre de tabulation et gestion du focus)</li>
+	<li>gérer facilement des zoom texte (vectoriel)</li>	
+</ul>
+<div>
+	<div style="float:left;width:65%">
+		<h2>Complet?</h2>
+		<ul style="margin-right:0.5em;">
+			<li>Peu de structuration</li>
+			<li>Doit être compilé explicitement en mode accessible</li>
+		</ul>
+		<p style="margin-right:0.5em"> Voir <a href="http://www.adobe.com/accessibility/products/compliance/index.html" title="Adobe Accessibility standards compliance" lang="en"><abbr title="Voluntary Product Accessibility Template">VPAT</abbr> Adobe</a> pour la conformité à la Section 508</p>
+	</div>
+	<div style="float:right;padding-right:1em;margin-top:3em;">
+		<img src="screens/flashbuilder_a11y.png" alt="capture d'écran du plugin flash builder pour eclipse avec la case à cocher 'Générer un fichier SWF accessible'" />
+	</div>
+</div>
+</div>
+
+<div class="slide">
+<h1>Accessibilité et <acronym>AJAX</acronym>: rappels</h1>
+<div style="font-size:80%">
+<h2 style="margin: 0.5em 1em"><acronym>AJAX</acronym></h2>
+<ul>
+	<li>Mise à jour partielle de la page</li>
+	<li>Composants d'interfaces complexes</li>
+</ul>
+<h2 style="margin: 0.5em 1em"><acronym>ARIA</acronym></h2>
+<ul>
+	<li>Supporter les mises à jour partielles de la page</li>
+	<li>Ajouter de la sémantique et de la structure</li>
+	<li>&Eacute;tendre la navigation au clavier</li>
+	<li>&Eacute;tendre les possibilités de contrôle de formulaire (association étiquette/champ, champs requis, plages de valeur...)</li>
+</ul>
+</div>
+<div style="text-align:center"><img src="screens/ajax.png" alt="" /></div>
+</div>
+
+<div class="slide">
+<h1>Et ça marche?</h1>
+<div  style="font-size:80%">
+<p class="listyle"><acronym>ARIA</acronym> en <span lang="en">Candidate recommandation</span></p>
+<blockquote cite="http://www.w3.org/TR/2010/NOTE-WCAG20-TECHS-20101014/aria.html" lang="en">
+<ul>
+	<li>Firefox 1.5 and Firefox 2.0 partially supports WAI-ARIA,
+                  however it requires the use of namespaces, and doesn't
+                  support the use of Liveregions.</li>
+	<li>Firefox 3+ contains better support for WAI-ARIA, including
+                  Liveregions.</li>
+   <li>IE8 partially supports WAI-ARIA. </li>
+   <li>JAWS 8 and Window-Eyes 5.5+ partially support
+                  WAI-ARIA.</li>
+   <li>Jaws 10+ supports WAI-ARIA. </li>
+   <li>FireVox, a self-voicing extension to Firefox, also
+                  supports WAI-ARIA via direct DOM access. </li>
+   <li>NVDA partially supports WAI-ARIA.</li>
+</ul>
+</blockquote>
+<p class="citesrc"><cite lang="en">ARIA Techniques for WCAG 2.0</cite></p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Focus sur <acronym>ARIA</acronym></h1>
+
+<div style="text-align:center">
+<img src="screens/focusaria.png" alt="ARIA permet de traiter Les landmarks, les widgets complexes comme les sliders et les listes déroulantes à complétion et les mises à jours partielles" />
+</div>
+</div>
+
+<div class="slide">
+<h1>Les régions du documents</h1>
+<p>Possibilité de découper le document par régions/<span lang="en">landmark</span></p>
+<ul>
+	<li><code>navigation</code> définit une zone contenant les liens de navigation interne et externe</li>
+	<li><code>application</code> définit une zone d'application web (<abbr title="versus">vs</abbr> <code>document</code>)</li>
+	<li><code>banner</code> définit la zone d'entête de la page</li>
+	<li><code>complementary</code> définit la zone "annexe", type pied de page</li>
+	<li><code>search</code> définit la zone "moteur de recherche"</li>
+	<li><code>form</code> définit une zone de type formulaire</li>
+	<li><code></code></li>
+	<li>...</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1>Les <span lang="en">live-regions</span></h1>
+<ul>
+	<li><code>aria-live</code>: [<code>off</code>, <code>polite</code>, <code>assertive</code>]</li>
+	<li><code>aria-atomic</code>: décrire toute la zone ou non?</li>
+	<li><code>aria-relevant</code>: [<code>additions</code>, <code>removals</code>, <code>text</code>, <code>all</code>]</li>
+	<li>...</li>
+</ul>
+
+<pre>
+&lt;div class="example"&gt;
+  &lt;label id="region2Label" for="liveregion2"&gt;Log Text&lt;/label&gt;
+  &lt;div id="liveregion2" 
+       class="region"
+       <strong class="important">role="log"
+       aria-labelledby="region2Label"
+       aria-live="polite"
+       aria-atomic="false"
+       aria-relevant="additions"</strong>&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<div class="slide">
+<h1>Exemple: les <span lang="en">live-regions</span></h1>
+<div class="video">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="800" height="704" id="ccPlayerAS3" align="middle"> 
+<!--<param name="allowScriptAccess" value="sameDomain" /> -->
+<param name="allowFullscreen" value="true" /> 
+<param name="movie" value="ccplayeras3_202/ccPlayerAS3.swf?ccMediaName=../videos/aria-live.flv&ccMediaBufferTime=.5&ccMediaHeight=600&ccMediaWidth=800" /> 
+<param name="quality" value="high" /> 
+<param name="bgcolor" value="#ffffff" /> 
+
+<embed src="ccplayeras3_202/ccPlayerAS3.swf?ccMediaName=../videos/aria-live.flv&ccMediaBufferTime=.5&ccMediaHeight=600&ccMediaWidth=800" allowFullscreen="true" width="800" height="704" name="ccPlayerAS3Sample" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+<p>Vidéo de démonstration de Jaws avec les <span lang="en">live-regions</span> sur <a href="http://www.oaa-accessibility.org/example/22/">Open AJAX Alliance</a></p>
+</embed>
+
+</object>
+</div>
+</div>
+
+<div class="slide">
+<h1>La navigation au clavier</h1>
+<p class="listyle">Composants des widgets ne peuvent prendre le focus au clavier</p>
+<div class="hbox">
+<pre>
+&lt;div id="divEx" <strong class="important">tabindex="0"</strong> style="border:1px solid red;"&gt;
+ &lt;br /&gt;
+ &lt;p id="pEx" style="display:none"&gt;J'ai le focus&lt;/p&gt;
+&lt;/div&gt;
+
+<em>[...]</em>
+
+&lt;script type="text/javascript" &gt;
+window.onload=function (){
+ if(window.addEventListener){
+  document.getElementById("divEx").addEventListener(
+   <strong class="important">"focus"</strong>, exempleFocus, false);
+  document.getElementById("divEx").addEventListener(
+   <strong class="important">"blur"</strong>,exempleBlur, false);
+ }
+ else{
+  document.getElementById("divEx").attachEvent(
+   <strong class="important">"onfocus"</strong>, exempleFocus);
+  document.getElementById("divEx").attachEvent(
+   <strong class="important">"onblur"</strong>, exempleBlur);
+ }
+};
+
+function exempleFocus(event){
+ document.getElementById("pEx").style.display="block";
+}
+
+function exempleBlur(event){
+ document.getElementById("pEx").style.display="none";
+}
+&lt;/script&gt;
+</pre>
+</div>
+
+</div>
+
+<div class="slide">
+<h1>Exemple navigation au clavier</h1>
+<br />
+<br />
+<br />
+<div class="frameExemple">
+<iframe src="exemples/exemple1.html">
+	<p><a href="exemples/exemple1.html">Exemple 1</a></p>
+</iframe>
+</div>
+
+</div>
+
+<div class="slide">
+<h1>Les <span lang="en">widgets</span></h1>
+<p>Existence d'un grand nombre de rôles différents:</p>
+<ul>
+	<li><code>button</code></li>
+	<li><code>checkbox</code></li>
+	<li><code>treeitem</code></li>
+	<li><code>timer</code></li>
+	<li><code>slider</code></li>
+	<li><code>combobox</code></li>
+	<li><code>radiogroup</code></li>
+	<li><code>progressbar</code></li>
+	<li><code>alert</code></li>
+	<li>...</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1>Les widgets, exemple du <span lang="en">slider</span></h1>
+<!--<div style="text-align:center">
+	<img src="screens/sliders_sample.png" alt="Deux potentiomètres horizontaux, le premier avec un seul curseur, le second avec deux curseurs" />
+</div>-->
+<br />
+<pre lang="en">
+&lt;div <strong class="important">role="application"</strong>&gt;
+
+  &lt;h3&gt;Slider Example 1: A Simple Slider&lt;/h3&gt;
+  
+  &lt;div id="sr1_label" class="hidden"&gt;Example 1 Slider&lt;/div&gt;
+  &lt;div class="hslider" id="sr1"&gt;&lt
+    &lt;img style="top: 434px; left: 280px;" id="sr1_handle"
+    class="hsliderHandle" src="..." 
+    <strong class="important">role="slider" 
+    aria-valuemin="0" 
+    aria-valuemax="100" 
+    aria-valuenow="30" 
+    aria-labelledby="sr1_label" 
+    aria-controls="sr1_text" 
+    tabindex="0"</strong> /&gt;
+    &lt;div style="top: 434px; left: 275px;" id="sr1_handle_val" 
+    class="hsliderValue" 
+    <strong class="important">role="presentation"</strong>&gt;30&lt;/div&gt;  
+  &lt;/div&gt;  
+&lt;/div&gt;
+</pre>
+</div>
+
+
+
+<div class="slide">
+<h1>Exemple: <span lang="en">slider</span> avec Jaws</h1>
+<div class="video">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="800" height="704" id="ccPlayerAS3" align="middle"> 
+<!--<param name="allowScriptAccess" value="sameDomain" /> -->
+<param name="allowFullscreen" value="true" /> 
+<param name="movie" value="ccplayeras3_202/ccPlayerAS3.swf?ccMediaName=../videos/aria-slider.flv&ccMediaBufferTime=.5&ccMediaHeight=600&ccMediaWidth=800" /> 
+<param name="quality" value="high" /> 
+<param name="bgcolor" value="#ffffff" /> 
+
+<embed src="ccplayeras3_202/ccPlayerAS3.swf?ccMediaName=../videos/aria-slider.flv&ccMediaBufferTime=.5&ccMediaHeight=600&ccMediaWidth=800" allowFullscreen="true" width="800" height="704" name="ccPlayerAS3Sample" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+<p>Vidéo de démonstration de Jaws avec des <span lang="en">slider</span> sur <a href="http://www.oaa-accessibility.org/example/31/">Open AJAX Alliance</a></p>
+</embed>
+
+</object>
+</div>
+</div>
+
+<!-- Partie 3 -->
+<div class="slide">
+<h1><acronym>ARIA</acronym> suffisant?</h1>
+<br />
+<ul>
+	<li style="margin-bottom:2em;">Une technique concernant la dynamique</li>
+	<li style="margin-bottom:2em;">Désactivation du javascript dans les référentiels</li>
+	<li style="margin-bottom:2em;">Les mix de technologies</li>
+	<li>Doit-on réaliser deux interfaces?</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1><acronym>AJAX</acronym> dans le cycle de projet</h1>
+<p>HiJax et <span lang="en">Progressive enhancement</span></p>
+<blockquote cite="http://domscripting.com/blog/display/41" style="font-size:80%">
+<ol>
+<li><strong>First, build an old-fashioned website</strong> that uses hyperlinks and forms to pass information to the server. The server returns whole new pages with each request.</li>
+<li><strong>Now, use JavaScript to intercept those links and form submissions</strong> and pass the information via XMLHttpRequest instead. You can then select which parts of the page need to be updated instead of updating the whole page.</li>
+</ol>
+</blockquote>
+<blockquote cite="http://domscripting.com/blog/display/41" style="font-size:80%">
+<ul>
+	<li>Plan for Ajax from the start.</li>
+	<li>Implement Ajax at the end.</li>
+</ul>
+</blockquote>
+<p class="citesrc">Jeremy Keith sur DomScripting</p>
+</div>
+
+<div class="slide">
+<h1>Refaire tous les composants?</h1>
+<p>Implémenté dans de nombreux frameworks AJAX</p>
+<br />
+<ul>
+	<li>Dojo</li>
+	<li>Yahoo UI</li>
+	<li>GWT</li>
+	<li>extJS</li>
+	<li>jARIA pour jQuery</li>
+	<li>...</li>
+</ul>
+<br />
+<p style="text-align:right">&Eacute;tudier les différents outils et leur possibilité avant le démarrage.</p>
+</div>
+
+<!-- Slides de fin -->
+<div class="slide">
+<h1>Accessibilité et interface riche</h1>
+<br />
+<ul>
+	<li style="margin-bottom:1em">Possible dès aujourd'hui</li>
+	<li style="margin-bottom:1em">Améliore l'ergonomie globale</li>
+	<li style="margin-bottom:1em">Référencement naturel</li>
+	<li style="margin-bottom:1em">Framework d'IHM</li>
+	<li style="margin-bottom:1em">Support des navigateurs</li>
+	<li>Support des assistance techniques</li>
+</ul>
+</div>
+<div class="slide">
+<h1>Ressources</h1>
+<ul>
+	<li lang="en"><a href="http://www.w3.org/TR/wai-aria/"><acronym>WAI-ARIA</acronym></a></li>
+	<li lang="en"><a href="http://www.oaa-accessibility.org/">Open AJAX Alliance - Accessibility</a></li>
+	<li lang="en"><a href="http://dev.opera.com/articles/view/introduction-to-wai-aria/">Introduction to WAI ARIA by Gez Lemon on Dev.Opera</a></li>
+	<li><a href="http://www.accessiweb.org/">AccessiWeb</a></li>
+	<li><a href="http://www.legifrance.gouv.fr">Legifrance</a></li>
+	<li lang="en"><a href="http://wiki.codetalks.org/">CodeTalks</a></li>
+	<li lang="en"><a href="http://www.adobe.com/accessibility/products/compliance/index.html">Adobe <abbr title="Voluntary Product Accessibility Template">VPAT</abbr></a></li>
+	<li lang="en"><a href="http://domscripting.com/blog/display/41">HiJax by Jeremy Keith</a></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Merci de votre attention</h1>
+<div style="text-align:center;margin-top:5em;"><img src="graphics/question.jpg" alt="Place aux questions" ></div>
+</div>
+
+
+
+</body>
+</html>
