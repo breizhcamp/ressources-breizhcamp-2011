@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+ARIA 1.0//EN" 
+    "http://www.w3.org/WAI/ARIA/schemata/html4-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Exemple 1</title>	<link rel="stylesheet" href="styles/slidy.css" type="text/css" />
+	
+<script type="text/javascript" >
+
+window.onload=function (){
+	if(window.addEventListener){
+		document.getElementById("divEx").addEventListener("focus", exempleFocus, false);
+		document.getElementById("divEx").addEventListener("blur", exempleBlur, false);
+		/*document.getElementById("divEx").addEventListener("mouseover", exempleFocus, false);
+		document.getElementById("divEx").addEventListener("mouseout", exempleBlur, false);*/
+	}
+	else{
+		document.getElementById("divEx").attachEvent("onfocus", exempleFocus);
+		document.getElementById("divEx").attachEvent("onblur", exempleBlur);
+		/*document.getElementById("divEx").attachEvent("onmousover", exempleFocus);
+		document.getElementById("divEx").attachEvent("onmouseout", exempleBlur);*/
+	}
+};
+
+function exempleFocus(event){
+	document.getElementById("pEx").style.display="block";
+}
+
+function exempleBlur(event){
+	document.getElementById("pEx").style.display="none";
+}
+
+</script>
+
+</head>
+<body>
+<div id="divEx" tabindex="0" style="border:1px solid red;text-align:center">
+	<br />
+	<p id="pEx" style="display:none">Je suis un élément <code>div</code> avec le focus au clavier</p>
+</div>
+</body>
+</html>

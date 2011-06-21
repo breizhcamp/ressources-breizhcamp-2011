@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Embedding ccPlayer Inside Another SWF &ndash; NCAM</title>
+	
+	<link rel="stylesheet" href="c/ccplayer.css" media="all" type="text/css" />
+	
+	
+</head>
+<body>
+<p id="skipper"><a href="#top" accesskey="8" tabindex="1">Skip to Content</a></p>
+
+<div id="header">
+	<a href="http://ncam.wgbh.org" id="ncam-home-link" accesskey="1" tabindex="2"><img class="img-logo" src="
+	i/ncam_logo_sm.jpg" alt="The WGBH / NCAM / National Center for Accessible Media" width="388" height="78" /></a>
+	
+<!-- #bbinclude "topnav.incl" -->
+	<ul id="site-nav">
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/" accesskey="5" tabindex="3">CCforFlash</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html" accesskey="6" tabindex="4">ccPlayer</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/magpie/index.html" accesskey="6" tabindex="4">MAGpie</a></li>
+		<li><a href="ccforflash-community.html" tabindex="6">Community Help</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+	<div id="main-nav">
+		<img src="i/sp.png" width="100%" height="28" />
+	</div>	
+
+</div>
+
+<div id="left-column">
+	<h2>ccPlayer Help</h2>
+	
+	<!-- #bbinclude "helpnav.incl" -->
+	<ul>
+		<li><a href="ccplayer-sample.html">ccPlayer Examples</a></li>
+		<li><a href="ccplayer-features.html">ccPlayer New<br />Features</a></li>
+		<li><a href="ccplayer-embed.html">Embedding ccPlayer <br />on a Web Page</a></li>
+		<li><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a></li>
+		<li><a href="ccplayer-accessibility.html">ccPlayer Accessibility Features</a></li>
+		<li><a href="ccplayer-custom.html">Customizing ccPlayer</a></li>
+		<li><a href="ccplayer-controls.html">Creating ccPlayer<br />Customized Controls</a></li>
+		<li><a href="ccplayer-swfembed.html">Embedding ccPlayer<br />Inside Another SWF</a></li>
+		<li><a href="authoringcapts.html">Authoring Captions <br />for Flash</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+</div>
+
+<div id="main-content">	
+
+	<div id="int-content"><a name="top" id="top"></a>
+		
+		<h1 class="mn">Embedding ccPlayer Inside Another SWF</h1>
+		
+		
+		<p>It is now possible to embed the AS3 version of ccPlayer inside another SWF. There are two methods used to set ccPlayer's display and media playback. Both methods are passed many of the parameters that are set via the Flashvars parameters when ccPlayer is embedded on a web page, such as ccMediaName, ccMediaWidth and ccMediaHeight. Any additional parameters can be set as ccPlayer properties.</p> 
+
+		<p>Additional methods are included which will allow for such things as pausing the media playback, triggering the fullscreen display, and getting the current media time. To create a player that will play consecutive media files, an event is dispatched whenever the current media finishes playing in order to start the next media item.</p>
+
+		<h2>Initializing the ccPlayer SWF</h2>	
+		<p>Once the <span class="bd">ccPlayerAS3.swf</span> is loaded, the <span class="bd">initccPlayerDisplay()</span> method must be called to initialize the size of ccPlayer's media display and indicate which controls to use. Afterwards, the <span class="bd">setNewMediaPlayback()</span> method is used to set up the next media to be played. This method can be used in conjunction with the end-of-playback event to play consecutive media files. Any parameters that need to be set, which aren't included in the <span class="bd">setNewMediaPlayback()</span> parameters, should be set prior to calling this method. At any time the size of the player display and the controls can be changed by recalling the <span class="bd">initccPlayerDisplay()</span> method.</p>
+
+		<h2>Sample file</h2>
+		<p>A sample file (<span class="bd">embedding_ccPlayer.fla</span>), which contains sample code for loading and controlling the ccPlayerAS3.swf, is provided in ccPlayerAS3's download package. A demonstration of ccPlayer embedded in another SWF can be found on the <a href="ccplayer-sample.html#embeddemo">ccPlayer Examples page</a>.</p> 
+		
+		<h2>Fullscreen view</h2>
+		<p>When ccPlayer's fullscreen view mode is selected, ccPlayer positions itself in the upper left corner of the screen and expands its black background to fill the entire screen. Any objects in layers underneath the ccPlayer object will be covered and any objects positioned on layers on top of ccPlayer will remain visible.</p>
+
+		<h2>Methods</h2>	
+
+		<ul class="outside">
+
+		<li>
+			<span class="bd">initccPlayerDisplay</span>(
+			<span class="it">width</span>:Number, 
+			<span class="it">height</span>:Number, 
+			<span class="it">controls</span>:String, 
+			<span class="it">base-color</span>:String)<br />
+			Required. Used to initialize the ccPlayer display.
+			<ul>
+				<li class="inside"><span class="bd">width</span> (required) - width of the media display area prior to launching the media</li>
+				<li><span class="bd">height</span> (required) - height of the media display area prior to launching the media</li>
+				<li><span class="bd">controls</span> (optional) - used to identify which controls to use. Options are:
+					<ul>
+						<li class="inside"><span class="bd">default</span> - default controls. This is what is used if the controls parameter is not included.</li>
+						<li><span class="bd">url</span> - identifies the url of the external swf which contains the customized controls</li>
+						<li><span class="bd">nocontrols</span> - no controls are to be used with playback</li>
+					
+					</ul>
+				</li>
+				<li><span class="bd">base-color</span> (optional) - used to indicate the color used as the background for the sliding windows (instructions, search, language), background of the tool tips for the buttons which open the sliding windows, and the fill color of the progress bar</li>
+			</ul>
+		</li>
+		
+		<li>
+			<span class="bd">setNewMediaPlayback</span>(
+			<span class="it">media-file</span>:String, 
+			<span class="it">poster-image</span>:String, 
+			<span class="it">audio-image</span>:String, 
+			<span class="it">autostart</span>:Boolean, 
+			<span class="it">block-controls</span>:Boolean, 
+			<span class="it">caption-type</span>:String, 
+			<span class="it">caption-file</span>:String, 
+			<span class="it">caption-language</span>:String)<br />
+			Used to identify the next media to be played along with some of its options, including captions.
+			<ul>
+				<li class="inside"><span class="bd">media-file</span> (required) - url of the media file to play</li>
+				<li><span class="bd">poster-image</span> (optional) - url of the external image to use as the poster image</li>
+				<li><span class="bd">audio-image</span> (optional) - url of the external image to be displayed when an MP3 audio file is being played</li>
+				<li><span class="bd">autostart</span> (optional) - indicates whether the media autostarts when loaded (true) or pauses (false) and waits to be started (default is false)</li>
+				<li><span class="bd">block-controls</span> (optional) - indicates whether the controls should be blocked (true) while the media is playing or not (false) (default is false)</li>
+				<li class="inside"><span class="bd">caption-type</span> (optional) - type of source containing the caption information</li>
+					<ul>
+						<li class="inside">external – external timed-text file</li>
+						<li>embedded – embedded in video</li>
+					</ul>
+
+				<li><span class="bd">caption-file</span> (optional) - url for a DFXP or QTtext caption file</li>
+				<li><span class="bd">caption-language</span> (optional) - identifies which language &lt;div&gt; to select in a DFXP file</li>
+			</ul>
+			*If the media is being streamed from a Flash media server, use <span class="bd">setStreamingServer()</span> to identify the url of the streaming server prior to calling <span class="bd">setNewMediaPlayback()</span>.
+		</li>
+
+		<li>
+			<span class="bd">setNewMediaSize</span>(
+			<span class="it">width</span>:Number, 
+			<span class="it">height</span>:Number)<br />
+			Used to change the size of the media display area.
+			<ul>
+				<li class="inside"><span class="bd">width</span> (required) - width of the media display area</li>
+				<li><span class="bd">height</span> (required) - height of the media display area</li>
+			</ul>
+		</li>
+
+		<li>
+			<span class="bd">setStreamingServer</span>(
+			<span class="it">server-url</span>:String)<br />
+			Used to identify the streaming server, when video is being streamed from a Flash media server.
+			<ul>
+				<li class="inside"><span class="bd">server-url</span> (required) - url of the streaming server</li>
+			</ul>
+		</li>
+
+		<li>
+			<span class="bd">pauseMedia</span>()<br />
+			Pauses the current media playback.
+		</li>
+		
+		<li>
+			<span class="bd">playMedia</span>()<br />
+			Restarts the current media playback.
+		</li>
+		
+		<li>
+			<span class="bd">showCaptionArea</span>()<br />
+			Shows the caption display.
+		</li>
+		
+		<li>
+			<span class="bd">hideCaptionArea</span>()<br />
+			Hides the caption display.
+		</li>
+		
+		<li>
+			<span class="bd">raiseMediaVolume</span>()<br />
+			Raises the media volume.
+		</li>
+		
+		<li>
+			<span class="bd">lowerMediaVolume</span>()<br />
+			Lowers the media volume.
+		</li>
+		
+		<li>
+			<span class="bd">displayFullscreen</span>()<br />
+			Switches the view from normal to fullscreen view.
+		</li>
+		
+		<li>
+			<span class="bd">displayNormalScreen</span>()<br />
+			Switches the view from fullscreen to normal view.
+		</li>
+		
+		<li>
+			<span class="bd">jumpToTimeSeconds</span>(
+			<span class="it">time</span>:Number)<br />
+			Jumps to point in media indicated by the time provided.
+			<ul>
+				<li class="inside"><span class="bd">time</span> (required) - number of seconds where media playback should jump to</li>
+			</ul>
+			*If the time given is for an area of the video which has not yet been loaded, the position remains where it was before the jump.
+		</li>
+
+		<li>
+			<span class="bd">disableShortcutKeys</span>()<br />
+			Used to turn off the recognition of the shortcut keys in ccPlayer. This is provided to stop ccPlayer from reacting to keystrokes when the user has navigated to special areas that also react to keystrokes, such as an input text field.
+		</li>
+		
+		<li>
+			<span class="bd">enableShortcutKeys</span>()<br />
+			Used to re-enable the recognition of the shortcut keys in ccPlayer.
+		</li>
+		
+		<li>
+			<span class="bd">activateRollupCaptionDisplay</span>(
+			<span class="it">number-lines</span>:int)<br />
+			Used to switch the caption display from pop-on to roll-up.
+			<ul>
+				<li class="inside"><span class="bd">number-lines</span> (optional) - number of lines used to display roll-up captions, default = 2</li>
+			</ul>
+		</li>
+
+		<li>
+			<span class="bd">activatePoponCaptionDisplay</span>()<br />
+			Used to switch the caption display from roll-up to pop-on.
+		</li>
+		
+		</ul>
+		
+		<h2>Properties</h2>	
+
+		<ul class="outside">
+		
+		<li>
+			<span class="bd">fullscreenActive</span> <br />(read only)<br />
+			Indicates whether the screen is currently displaying fullscreen view (true) or normal view (false).
+		</li>
+		
+		<li>
+			<span class="bd">mediaTime</span> <br />(read only)<br />
+			Indicates the current media playback time, in seconds.
+		</li>
+		
+		<li>
+			<span class="bd">mediaTimeLeft</span> <br />(read only)<br />
+			Indicates the current media playback time left, in seconds.
+		</li>
+
+		<li>
+			<span class="bd">captionAreaOpen</span> <br />(read only)<br />
+			Indicates whether the caption display is currently visible (true) or hidden (false).
+		</li>
+		
+		</ul>
+		
+		<h2>Event</h2>	
+
+		<ul class="outside">
+		
+		<li>
+			<span class="bd">MEDIA_END</span> <br />
+			Event that is dispatched when the end of the media playback is reached. To react to the event, set up an event listener:<br /><br />
+			<p><span style="font-family:Courier New;font-weight:bold;font-size:1.1em">ccplayer_instance_name.addEventListener(&ldquo;MEDIA_END&rdquo;, set_next_step);</span></p>
+		</li>
+		
+
+		
+		<p id="lastup">Last updated: January 30, 2010</p>
+	</div>
+</div>
+
+<div id="footer">
+
+<!-- #bbinclude "footer.incl" -->
+	<p><a href="http://ncam.wgbh.org">NCAM</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/">CCforFlash</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html">ccPlayer</a> | <a href="http://ncam.wgbh.org/webaccess/magpie/index.html">MAGpie</a> | <a href="ccforflash-community.html">Community Help</a> | <a href="http://www.wgbh.org">WGBH</a><br />
+	NCAM is part of the <a href="http://access.wgbh.org/">Media Access Group at WGBH</a></p>
+<!-- end bbinclude -->
+
+</div>
+
+</body>
+</html>

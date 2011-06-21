@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Embedding ccPlayer on a Web Page &ndash; NCAM</title>
+	
+	<link rel="stylesheet" href="c/ccplayer.css" media="all" type="text/css" />
+	
+	
+</head>
+<body>
+<p id="skipper"><a href="#top" accesskey="8" tabindex="1">Skip to Content</a></p>
+
+<div id="header">
+	<a href="http://ncam.wgbh.org" id="ncam-home-link" accesskey="1" tabindex="2"><img class="img-logo" src="
+	i/ncam_logo_sm.jpg" alt="The WGBH / NCAM / National Center for Accessible Media" width="388" height="78" /></a>
+	
+<!-- #bbinclude "topnav.incl" -->
+	<ul id="site-nav">
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/" accesskey="5" tabindex="3">CCforFlash</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html" accesskey="6" tabindex="4">ccPlayer</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/magpie/index.html" accesskey="6" tabindex="4">MAGpie</a></li>
+		<li><a href="ccforflash-community.html" tabindex="6">Community Help</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+	<div id="main-nav">
+		<img src="i/sp.png" width="100%" height="28" />
+	</div>	
+
+</div>
+
+<div id="left-column">
+	<h2>ccPlayer Help</h2>
+	
+	<!-- #bbinclude "helpnav.incl" -->
+	<ul>
+		<li><a href="ccplayer-sample.html">ccPlayer Examples</a></li>
+		<li><a href="ccplayer-features.html">ccPlayer New<br />Features</a></li>
+		<li><a href="ccplayer-embed.html">Embedding ccPlayer <br />on a Web Page</a></li>
+		<li><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a></li>
+		<li><a href="ccplayer-accessibility.html">ccPlayer Accessibility Features</a></li>
+		<li><a href="ccplayer-custom.html">Customizing ccPlayer</a></li>
+		<li><a href="ccplayer-controls.html">Creating ccPlayer<br />Customized Controls</a></li>
+		<li><a href="ccplayer-swfembed.html">Embedding ccPlayer<br />Inside Another SWF</a></li>
+		<li><a href="authoringcapts.html">Authoring Captions <br />for Flash</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+</div>
+
+<div id="main-content">	
+
+	<div id="int-content"><a name="top" id="top"></a>
+		
+		<h1 class="mn">Embedding ccPlayer on a Web Page</h1>
+				
+		<p>A Flash SWF object, such as ccPlayer, is embedded on a web page using &lt;object&gt; and &lt;embed&gt; tags. To bypass issues related to embedding active content directly in the page's html, <a href="#swfobj">SWFObject</a> and <a href="#ACrun">AC_RunActiveContent</a> use javascript to generate the &lt;object&gt; and &lt;embed&gt; tags as the page is loaded. This is meant to describe various processes that have been typically used to load the ccPlayerAS3.swf on a web page.</p>
+				
+		<p>There are two sets of parameters that are used with ccPlayer. The first set, shown below, are general parameters for Flash objects. The other set of parameters, which are unique to ccPlayer are passed to the player using the Flashvars parameter. These parameters are described in more detail in <a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a>.</p>
+				
+<!-- GENERAL FLASH PARAMETERS -->
+
+		<h2>General Flash Parameters</h2>
+		
+		<ul class="outside">
+
+		<li>
+			<span class="bd">allowFullscreen</span> &ndash This must be set to <span class="bd">true</span> in order for ccPlayer to be displayed in fullscreen mode.
+		</li>
+	
+		<li>
+			<span class="bd">wmode</span> &ndash; This <span class="ul">must</span> be set to <span class="bd">window</span> (the default for this parameter), in order for the screen-reader accessibility features to work. Any other value will result in ccPlayer being hidden from screen-reader users.
+		</li>
+	
+		<li>
+			<span class="bd">scale</span> &ndash Setting this will have no effect. ccPlayer is set up so it's content will not scale. (Scaling is not related to fullscreen viewing.) The width and height parameters below are used to expand or trim ccPlayer's visible area to accommodate various sizes of media. See <a href="#setsize">Setting the size of ccPlayer</a>.
+		</li>
+		
+		<li>
+			<span class="bd">width</span> &ndash ccPlayer's viewable width.
+		</li>
+
+		<li>
+			<span class="bd">height</span> &ndash ccPlayer's viewable height, including media, captions and controls.
+		</li>
+
+		<li>
+			<span class="bd">bgcolor</span> &ndash Color visible under the ccPlayer controls when they slide up, hiding the captions. 
+		</li>
+
+		<li>
+			<span class="bd">flashvars</span> &ndash Used to pass the parameters that are unique to ccPlayer. See <a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a>. 
+		</li>
+
+		</ul>
+		
+		<a href="#top">back to top</a>
+
+<!-- SETTING THE SIZE OF CCPLAYERAS3 -->
+
+		<a name="setsize" id="setsize"><h2>Setting the size of ccPlayerAS3</h2></a>
+		
+		<p>The size of ccPlayer depends on the media being played in it. ccPlayer has two sets of dimensions that it uses to set up the positioning and display of it's objects (media, controls, captions). The general <span class="bd">width</span> and <span class="bd">height</span> parameters, listed above, are used to set the outer dimensions of the ccPlayer, in other words, the 'footprint' that ccPlayer takes up on the web page. Internally, ccPlayer uses the <span class="bd">ccMediaWidth</span> and <span class="bd">ccMediaHeight</span> flashvars parameters to set the size of the media area that appears above the controls and caption area. (See <a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a>.)</p>
+		
+		<p>To determine the outer dimensions, the width of ccPlayer's footprint is determined by the widest object, which is either the media or the controls. Determining the height is a little more complex. It is determined by taking the height of the media and adding to it the height of the caption area and controls. Currently, the caption area height is fixed at 52 pixels. For an example, if a widescreen video (480 px x 270px) is being displayed with captions, using the default controls (52 pixels), the height that would be used would be 374 (270 pixels for video + 52 pixels for captions + 52 pixels for controls).</p>
+		
+		<p>In the coding examples below, the width of the player will be set to 480 pixels (the width of the default controls and video sample). The height will be set to 464 pixels, which the height of the video (360 pixels), plus the height of the caption area (52 pixels) and the height of the default controls (52 pixels).</p>
+		
+		<a href="#top">back to top</a>
+
+<!-- ADDING FLASHVARS PARAMETERS -->
+
+		<h2>Adding Flashvars Parameters</h2>
+		
+		<p>Each flashvars parameter is added using name=value combinations separated by '&amp;'. For example, to playback the video 'car.flv' with dimensions of 480x360 and an external caption file, 'car.dfxp.xml', the flashvars string would be:</p>
+		
+		<p><span class="code-span">ccMediaName=car.flv&amp;ccMediaHeight=360&amp;ccMediaWidth=480&amp;ccCaptSourceType=external&amp;ccCaptionSource=car.dfxp.xml</span></p>
+		
+		<p>The flashvars string can either be included in the movie parameter by appending it to the swf object reference, following a question mark (?):</p>
+		
+		<p><span class="code-span">&lt;param name="movie" value="ccPlayerAS3.swf?ccMediaName=car.flv&amp;ccMediaHeight=360&amp;ccMediaWidth=480&amp;ccCaptSourceType=external&amp;ccCaptionSource=car.dfxp.xml" /&gt;<br /></span></p>
+		
+		<p>or it can be added as a separate parameter:</p>
+
+		<p><span class="code-span">&lt;param name="movie" value="ccPlayerAS3.swf /&gt;<br />
+		&lt;param name="flashvars" value="ccMediaName=car.flv&amp;ccMediaHeight=360&amp;ccMediaWidth=480&amp;ccCaptSourceType=external&amp;ccCaptionSource=car.dfxp.xml" /&gt;<br /></span></p>
+		
+		<p><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a> provides a complete list of ccPlayer's flashvars parameters.</p>
+	
+		<a href="#top">back to top</a>
+
+<!-- EMBEDDING CCPLAYER USING OBJECT AND EMBED TAGS -->
+
+		<h2 class="project">Embedding ccPlayer using &lt;object&gt; and &lt;embed&gt;</h2>	
+		<div class="code">
+			&lt;object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" <span class="bd">width="480" height="464"</span> id="ccPlayerAS3Sample" align="middle"&gt;<br />
+
+			&lt;param name="allowScriptAccess" value="sameDomain" /&gt;<br />
+
+			&lt;param <span class="bd">name="allowFullscreen" value="true"</span> /&gt;<br />
+
+			&lt;param name="movie" value="ccPlayerAS3.swf?<span class="bd">ccMediaName=car.flv&amp;ccMediaBufferTime=.5&amp;ccMediaHeight=360&amp;ccMediaWidth=480&amp;ccCaptSourceType=external&amp;ccCaptionSource=car.dfxp.xml&amp;ccCaptionLanguage=en&amp;ccPosterImage=car_poster.jpg</span>" /&gt;<br />
+
+			&lt;param name="quality" value="high" /&gt;<br />
+
+			&lt;param name="bgcolor" value="#ffffff" /&gt;<br />
+
+			<br />
+
+			&lt;embed&nbsp; src="ccPlayerAS3.swf?<span class="bd">ccMediaName=car.flv&amp;ccMediaBufferTime=.5&amp;ccMediaHeight=360&amp;ccMediaWidth=480&amp;ccCaptSourceType=external&amp;ccCaptionSource=car.dfxp.xml&amp;ccCaptionLanguage=en&amp;ccPosterImage=car_poster.jpg</span>" <span class="bd">allowFullscreen="true" width="480" height="464"</span> name="ccPlayerAS3Sample" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" /&gt;<br />
+
+			<br />
+
+			&lt;/object&gt;<br />
+		</div>
+
+		<a href="#top">back to top</a>
+
+<!-- EMBEDDING CCPLAYER USING SWFOBJECT -->
+
+		<a name="swfobj" id="swfobj"><h2 class="project">Embedding ccPlayer using SWFObject</h2></a>	
+		
+		<p>The SWFObject is continually being updated. The latest version and documentation can be found at <a href="http://code.google.com/p/swfobject/">http://code.google.com/p/swfobject/</a>. 
+		
+		<p>Example code to be placed in the header for SWFObject:</p>
+		<div class="code">
+			&lt;script type="text/javascript"&gt;<br />
+			&nbsp;&nbsp;<span class="it">// creating the flashvars object</span><br />
+			&nbsp;&nbsp;var flashvars = {};<br />
+			&nbsp;&nbsp;flashvars.ccMediaName="car.flv";<br />
+			&nbsp;&nbsp;flashvars.ccMediaBufferTime=".5";<br />
+			&nbsp;&nbsp;flashvars.ccMediaHeight="360";<br />
+			&nbsp;&nbsp;flashvars.ccMediaWidth="480";<br />
+			&nbsp;&nbsp;flashvars.ccCaptSourceType="external";<br />
+			&nbsp;&nbsp;flashvars.ccCaptionSource="car.dfxp.xml";<br />
+			&nbsp;&nbsp;flashvars.ccCaptionLanguage="en";<br />
+			&nbsp;&nbsp;flashvars.ccPosterImage="car_poster.jpg";<br />
+			&nbsp;&nbsp;<span class="it">// creating the parameters object</span><br />
+			&nbsp;&nbsp;var params = {};<br />
+			&nbsp;&nbsp;params.bgcolor = "#ffffff";<br />
+			&nbsp;&nbsp;params.allowFullscreen = "true";<br />
+			&nbsp;&nbsp;<span class="it">// creating the attributes object</span><br />
+			&nbsp;&nbsp;var attributes = {};<br />
+			&nbsp;&nbsp;attributes.id = "ccPlayerAS3";<br />
+			&nbsp;&nbsp;attributes.name = "ccPlayerAS3";<br />
+			&nbsp;&nbsp;<span class="it">// calling the embedSWF function</span><br />
+			&nbsp;&nbsp;swfobject.embedSWF("ccPlayerAS3.swf", "player", "480", "464", "9.0.0","expressInstall.swf", flashvars, params, attributes);<br />
+			&lt;/script&gt;<br />
+		</div>
+		
+		<br />
+		<p>This is placed in the body of the page where ccPlayer should appear:</p>
+		
+		<div class="code">
+			&lt;div id="player"&gt;<br />
+				&nbsp;&nbsp;&lt;a href="http://www.adobe.com/go/getflashplayer"&gt;<br />
+				&nbsp;&nbsp;&lt;img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"&gt;<br />
+				&nbsp;&nbsp;&lt;/a&gt;<br />
+			&lt;/div&gt;
+		</div>
+
+		<a href="#top">back to top</a>
+
+<!-- EMBEDDING CCPLAYER USING AC_RUNACTIVECONTENT -->
+
+		<a name="ACrun" id="ACrun"><h2 class="project">Embedding ccPlayer using AC_RunActiveContent</h2></a>	
+		
+		<p>As of the Flash CS3 package, publishing a Flash project's html page would also generate an AC_RunActiveContent.js javascript file. When this file is loaded, the javascript function AC_FL_RunContent() is used to dynamically generate the &lt;object&gt; and &lt;embed&gt; tags necessary for the browser to display the Flash object. This code is placed in the html code where the ccPlayer object should appear:</p>
+		<div class="code">
+			&lt;script language="javascript"&gt;<br />
+			&nbsp;&nbsp;if (AC_FL_RunContent == 0) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;alert("This page requires AC_RunActiveContent.js.");<br />
+			&nbsp;&nbsp;} else {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;AC_FL_RunContent(<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'width', '480',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'height', '464',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'src', 'ccPlayerAS3',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'quality', 'high',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'pluginspage', 'http://www.macromedia.com/go/getflashplayer',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'align', 'middle',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wmode', 'window',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'id', 'ccPlayerAS3',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'bgcolor', '#ffffff',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'name', 'ccPlayerAS3',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'allowFullScreen', 'true',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'allowScriptAccess','sameDomain',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'movie', 'ccPlayerAS3',<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'flashvars','ccMediaName=car.flv&amp;ccMediaBufferTime=.5&amp;ccMediaHeight=360&amp;ccMediaWidth=480&amp;ccCaptSourceType=external&amp;ccCaptionSource=car.dfxp.xml&amp;ccCaptionLanguage=en&amp;ccPosterImage=car_poster.jpg'<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;); //end AC code<br />
+			&nbsp;&nbsp;}<br />
+			&lt;/script&gt;
+		</div>	
+		<br />
+		<p>Remember to include the reference to the AC_RunActiveContent.js file in the header:</p>
+		
+		<div class="code">
+			&lt;script src="AC_RunActiveContent.js" language="javascript"&gt;&lt;/script&gt;
+		</div>
+		
+		<a href="#top">back to top</a>
+
+		<p id="lastup">Last updated: October 14, 2009</p>
+
+	</div>
+
+</div>
+
+
+
+<div id="footer">
+
+<!-- #bbinclude "footer.incl" -->
+	<p><a href="http://ncam.wgbh.org">NCAM</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/">CCforFlash</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html">ccPlayer</a> | <a href="http://ncam.wgbh.org/webaccess/magpie/index.html">MAGpie</a> | <a href="ccforflash-community.html">Community Help</a> | <a href="http://www.wgbh.org">WGBH</a><br />
+	NCAM is part of the <a href="http://access.wgbh.org/">Media Access Group at WGBH</a></p>
+<!-- end bbinclude -->
+
+</div>
+
+</body>
+</html>

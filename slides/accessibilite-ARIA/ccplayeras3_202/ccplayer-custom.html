@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Customizing ccPlayer &ndash; NCAM</title>
+	
+	<link rel="stylesheet" href="c/ccplayer.css" media="all" type="text/css" />
+	
+	
+</head>
+<body>
+<p id="skipper"><a href="#top" accesskey="8" tabindex="1">Skip to Content</a></p>
+
+<div id="header">
+	<a href="http://ncam.wgbh.org" id="ncam-home-link" accesskey="1" tabindex="2"><img class="img-logo" src="
+	i/ncam_logo_sm.jpg" alt="The WGBH / NCAM / National Center for Accessible Media" width="388" height="78" /></a>
+	
+<!-- #bbinclude "topnav.incl" -->
+	<ul id="site-nav">
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/" accesskey="5" tabindex="3">CCforFlash</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html" accesskey="6" tabindex="4">ccPlayer</a></li>
+		<li><a href="http://ncam.wgbh.org/webaccess/magpie/index.html" accesskey="6" tabindex="4">MAGpie</a></li>
+		<li><a href="ccforflash-community.html" tabindex="6">Community Help</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+	<div id="main-nav">
+		<img src="i/sp.png" width="100%" height="28" />
+	</div>	
+
+</div>
+
+<div id="left-column">
+	<h2>ccPlayer Help</h2>
+	
+	<!-- #bbinclude "helpnav.incl" -->
+	<ul>
+		<li><a href="ccplayer-sample.html">ccPlayer Examples</a></li>
+		<li><a href="ccplayer-features.html">ccPlayer New<br />Features</a></li>
+		<li><a href="ccplayer-embed.html">Embedding ccPlayer <br />on a Web Page</a></li>
+		<li><a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a></li>
+		<li><a href="ccplayer-accessibility.html">ccPlayer Accessibility Features</a></li>
+		<li><a href="ccplayer-custom.html">Customizing ccPlayer</a></li>
+		<li><a href="ccplayer-controls.html">Creating ccPlayer<br />Customized Controls</a></li>
+		<li><a href="ccplayer-swfembed.html">Embedding ccPlayer<br />Inside Another SWF</a></li>
+		<li><a href="authoringcapts.html">Authoring Captions <br />for Flash</a></li>
+	</ul>
+<!-- end bbinclude -->
+	
+</div>
+
+<div id="main-content">	
+
+	<div id="int-content"><a name="top" id="top"></a>
+		
+		<h1 class="mn">Customizing ccPlayer</h1>
+		
+		<p>There are various ways ccPlayer can be customized.</p>
+
+		<h2 class="project">Changing the Base Color</h2>	
+
+		<p>The easiest change to make to customize ccPlayer is to select a different color to be used for the background of various objects. Use the <span class="bd">ccBaseColor</span> parameter to set the color that will be used in the following areas:</p>
+			<ul>
+				<li class="inside">background color of the sliding windows for the instructions, search, and language areas</li>
+				<li>background color of tool tips for the buttons used to trigger the instructions, search and language areas (default controls only)</li>
+				<li>the fill color of the area in the progress bar which denotes the percent of the media loaded (default controls only)</li> 
+			</ul>
+			
+		<p>For example, to change from ccPlayer's default blue base color (#006699) to a base color which is orange (#ff6600), add ccBaseColor=#ff6600 in the flashvars. <a href="ccplayer-flashvars.html">ccPlayer Flashvars Parameters</a> contains more information on the flashvars parameters used with ccPlayer.</p>
+		
+		<p>Default base color<br />
+		<img src="i/basedefault.png" width="480" height="102" alt="default controls with default blue highlights" />
+		</p>
+		<p>Custom base color<br />
+		<img src="i/basecustom.png" width="480" height="102" alt="default controls with custom orange highlights" />
+		</p>
+		
+		<h2 class="project">Using Customized Controls</h2>	
+
+		<p>The controls in ccPlayer can be customized. In order to maintain functionality and accessibility, the new controls are limited to replacements of existing controls. However, not every object that is in ccPlayer's default controller has to be included in the customized controls. For example, if the caption file does not include multiple languages, there is no need to include the language button. Any object in the new controls are mapped to the existing controls by using the same instance names.</p> 
+		
+		<p>The authoring files (flas) for both the default controller used by ccPlayer and a sample customized controller are included in ccPlayer's download package, so they may be used as a starting point to creating customized controls. A list of the controls that may be included , their instance names and their description can be found in <a href="ccplayer-controls.html">Creating ccPlayer Customized Controls</a>.</p>
+
+		<p>Sample of customized controls<br />
+		<img src="i/customcontrols.png" width="480" height="31" alt="sample of customized controls that can be used with ccPlayer" />
+		</p>
+
+		<p id="lastup">Last updated: October 14, 2009</p>
+
+	</div>
+
+</div>
+
+
+<div id="footer">
+
+<!-- #bbinclude "footer.incl" -->
+	<p><a href="http://ncam.wgbh.org">NCAM</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/">CCforFlash</a> | <a href="http://ncam.wgbh.org/webaccess/ccforflash/ccplayermain.html">ccPlayer</a> | <a href="http://ncam.wgbh.org/webaccess/magpie/index.html">MAGpie</a> | <a href="ccforflash-community.html">Community Help</a> | <a href="http://www.wgbh.org">WGBH</a><br />
+	NCAM is part of the <a href="http://access.wgbh.org/">Media Access Group at WGBH</a></p>
+<!-- end bbinclude -->
+
+</div>
+
+</body>
+</html>

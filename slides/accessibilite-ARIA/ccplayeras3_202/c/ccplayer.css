@@ -1,0 +1,276 @@
+/*
+-----------------------------------------------
+ncam
+daniel_bulli@wgbh.org
+----------------------------------------------- */
+
+
+/* -- initialize base -- */
+	*, td, img	{margin : 0; padding : 0;}
+	img { border: 0; }
+	
+	form, fieldset	{font: 100%/120% verdana, arial, sans-serif}
+	p	{padding: 0 0 0 0; margin: 0 0 1em 0}
+
+	form label	{cursor: pointer}
+	fieldset	{border: none}
+	input, select, textarea {font-size: 100%}
+	
+/* -- body -- */
+	body	{
+		background: #fff url(../i/i-bg.gif) repeat-y top left;
+		color: #333; 
+		font: 62.5%/1.4em verdana, arial, sans-serif;
+	}
+	
+
+/* -- [ header ]
+-----------------------------------------------*/
+	
+	#header {
+		background: #333;
+		color: #fff;
+		border-bottom: 1px solid #fff;
+	}
+	
+	#header img {
+		float: left;
+	}
+	
+	#header ul#site-nav {
+		width: 150px;
+		border: 1px solid #fff;
+		border-width: 0 1px;
+		background-color: #ccc;
+		margin-left: 226px;
+		padding: 10px 0;
+		float: left;
+		list-style: none;
+	}
+
+	#header ul#site-nav li {
+		list-style: none;
+		padding: 0 0 0 10px;
+		line-height: 1.5em;
+	}
+	
+	#header #main-nav {
+		clear: both;
+		padding: 0;
+	}
+
+/* -- [ left-column ]
+-----------------------------------------------*/		
+	#left-column {
+		float: left;
+		width: 156px;
+		clear: left;
+		color: #fff;
+		font-size: 1em;
+		margin: 105px 0 0 16px;
+	}
+
+	#left-column h2 {
+		margin: 0 0 12px 0;
+		font-size: 1em;
+		border-top: 1px solid #717171;
+		border-bottom: 1px dotted #717171;
+		padding: 7px 0; 
+	}
+	
+	#left-column h2 span {
+		font-weight: normal;
+	}
+	
+	#left-column ul {
+		list-style:none;
+		margin: 0 0 1em 0;
+	}
+	#left-column ul li {
+		margin-left: 10px;
+		margin-top: 0.5em; 
+	}	
+		
+
+/* -- [ main-content ]
+-----------------------------------------------*/		
+	#main-content {
+		margin-left: 193px;
+		width: 600px;
+	}
+
+	h1.mn { 
+		clear: right;
+		color: #6689B1;
+		font: 2em/1.35em Georgia, serif;
+		letter-spacing:.1em;
+		margin-top: 54px;
+		margin-bottom: 1.5em;
+	}
+	
+	h2 {
+		font-size: 1.2em;
+		margin-top:1.5em;
+		margin-bottom: 1.2em;
+	}
+
+	h3 {
+		font-size: 1em;
+		margin-top:1.2em;
+		margin-bottom: 1em;
+	}
+
+
+/* -- [ internal content ]
+-----------------------------------------------*/	
+		#int-content {
+			float: left;
+			font-size: 1.1em;
+		}
+		
+		#int-content ul {
+			margin: 0 0 1em 24px;
+		}
+		
+		#int-content ul.outside{
+			list-style:none;
+		}
+
+		#int-content ul li {
+			margin-bottom: .75em;
+		}
+		
+		li.inside{
+			margin-top: .75em;
+		}
+
+/* -- [ code content ]
+-----------------------------------------------*/
+
+		.code{
+			background-color:#85b4e5;
+			padding:24px;
+			font-family:"Courier New";
+			font-size:1em;
+			line-height:1.2em;
+		}
+		
+		.code-span{
+			font-family:"Courier New";
+			font-size:1em;
+			line-height:1.2em;
+		}
+		
+/* -- [ last updated ]
+-----------------------------------------------*/
+
+	#lastup {
+		font-style:italic;
+		margin-top:24px;
+	}
+
+
+/* -- [ footer ]
+-----------------------------------------------*/
+	
+	#footer {
+		clear: both;
+		padding-top: 3em;
+		color: #999;
+		margin-left: 193px;
+		width: 572px;
+	}
+	
+	#footer p {
+		display: block;
+		border-top: 1px solid #ccc;
+		padding: 1em 0;
+		font-size: 0.9em;
+		line-height: 2em;
+	}	
+
+	#footer a:link,
+	#footer a:visited	{color: #999; text-decoration: underline;}
+	#footer a:hover,
+	#footer a:active,
+	#footer a:focus		{color: #c60; text-decoration: underline;}	
+	
+	
+/* -- [ links ]
+-----------------------------------------------*/		
+	
+	
+		a:link,
+		a:visited	{color: #6588AE; text-decoration: underline;}
+		a:hover,
+		a:active,
+		a:focus		{color: #c60; text-decoration: underline;}
+		
+		#left-column a:link,
+		#left-column a:visited	{color: #ccc;text-decoration:none;}
+		#left-column a:hover,
+		#left-column a:active,
+		#left-column a:focus		{color: #f90; text-decoration: underline;}		
+
+		/* SKIPPER */		
+		p#skipper {
+			position: absolute;		
+		}
+		
+		p#skipper a {
+			position: absolute;
+			display: block;
+			width: 8em;
+			text-indent: -9000px;	
+		}		
+		
+		p#skipper a:active,
+		p#skipper a:focus {
+			position: absolute;
+			display: block;
+			width: 8em;
+			text-indent: 0;
+			font-size: 2em;
+			padding: .5em;
+			left: 300px;
+			background: #fff;
+			border: 1px dotted #c90;
+		}
+			
+		#ncam-home-link:active img,
+		#ncam-home-link:focus img {
+			border: 1px dotted #c90;
+			width: 386px;
+			height: 76px;
+		}
+
+/* -- [ misc ]
+-----------------------------------------------*/		
+	
+	.bd {font-weight:bold;}
+	.ul {text-decoration:underline;}
+	.it {font-style:italic;}
+	.br {font-weight:bold;color:#990000;}
+
+	#scrdisplay{
+		width:600px;
+		height:160px;
+		margin-top:24px;
+	}
+
+	#scrleft{
+		width:290px;
+		height:160px;
+		float:left;
+	}
+
+	#scrright{
+		width:290px;
+		height:160px;
+		float:right;
+	}
+
+	h2.headspace{
+		margin-top:40px;
+	}
+
