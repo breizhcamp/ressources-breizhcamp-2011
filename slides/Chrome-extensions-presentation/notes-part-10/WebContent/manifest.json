@@ -1,0 +1,32 @@
+{
+    "name" : "Bloc notes - partie 10",
+    "version" : "1.0",
+    "description" : "Prenez facilement vos notes !",
+    "icons" : 
+    {
+        "16"  : "icon_16.png",
+        "48"  : "icon_48.png", 
+        "128" : "icon_128.png"
+    },
+    "background_page" : "background.html",
+    "content_scripts" : 
+    [
+        {
+            "matches" : [ "http://*/*", "https://*/*", "file:///*" ],
+            "js" : [ "content_script.js" ]
+        }
+    ],
+    "browser_action" : {
+        "default_icon"  : "icon_48.png", 
+        "default_title" : "Vous n'avez aucune note",
+        "default_popup" : "popup.html"
+    },
+    "permissions" : 
+	[
+	 	"contextMenus"
+	],
+    "omnibox" : 
+	{ 
+    	"keyword" : "note" 
+	}
+}

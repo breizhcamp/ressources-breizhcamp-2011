@@ -1,0 +1,19 @@
+body {
+  font-size: 18pt !important;
+  text-align: left !important;
+  font-family: 'Droid Sans Mono', Courier !important;
+  /*padding: 10px 20px !important;*/
+  /*background: rgba(0, 255, 0, 0.05) !important;*/
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;  
+  -webkit-border-radius: 8px;
+  padding: 5px;
+  -webkit-box-shadow: 0 0 25px #777;
+}
+
+/*
+body {
+	margin: 1em 0px;
+	height: 250px;
+}
+*/
+

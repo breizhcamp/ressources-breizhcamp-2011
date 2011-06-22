@@ -1,0 +1,12 @@
+{
+	"name": "Notes demo helper",	
+	"version": "0.0.1",
+	"description": "A utiliser avec la présentation",
+	"background_page" : "background.html",
+	"content_scripts" : [ {
+		"matches" : [ "http://*/*", "https://*/*", "file:///*" ],
+		"js" : [ "content_script.js" ]		
+	} ],
+	"permissions": [ "tabs", "http://*/*", "https://*/*", "file:///*", "management" ],
+	"minimum_chrome_version" : "7"
+}

@@ -1,0 +1,61 @@
+html {
+	margin: -5px;
+}
+
+body {
+	font: normal 12pt Verdana, sans-serif;
+	width: 250px;	
+}
+
+h3 {
+	margin: 0px;
+	padding-left: 5px;
+}
+
+ul {
+	font-size: 14pt;	
+	font-weight: bold;	
+	padding: 0 1px 1px;
+	margin: 5px 5px 10px 0px; 
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+li {
+	color: #448;
+	background-color: #DDE;
+	text-shadow: 1px 1px 1px #EEE;
+	list-style: none;
+	padding: 5px 10px;
+	margin: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	-webkit-border-radius: 5px;
+	-webkit-transition-duration: .25s;
+	-webkit-transition-timing-function: ease-in;
+}
+
+li:hover {
+	background-color: #CCD;
+	white-space: normal;
+	cursor: default;
+}
+
+ul[contenteditable=true] li {
+	color: #112;
+	background-color: #EEF;
+	white-space: normal;	
+}
+
+.links {
+	font-size: 11pt;
+	float: right;
+	margin-right: 5px;
+}
+
+#export-link {
+	float: left;
+	font-size: 11pt;
+	margin-right: 10px;	
+}

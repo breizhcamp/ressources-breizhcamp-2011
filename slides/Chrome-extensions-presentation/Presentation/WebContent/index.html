@@ -1,0 +1,1284 @@
+<!DOCTYPE html> 
+<!--
+  Copyright 2011 Google Inc.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--> 
+<html> 
+	<head> 
+		<meta charset="utf-8" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" /> 
+		<title>Extensions Chrome &amp; HTML5</title>
+		<style>
+			@media screen {
+				@font-face {
+	  				font-family: 'Droid Sans Mono';
+	  				font-style: normal;
+	  				font-weight: normal;
+	  				src: local('Droid Sans Mono'), local('DroidSansMono'), url('fonts/DroidSansMono.woff') format('woff');
+				}
+			}
+			@media screen {
+				@font-face {
+	  				font-family: 'Droid Sans';
+	  				font-style: normal;
+	  				font-weight: normal;
+	  				src: local('Droid Sans'), local('DroidSans'), url('fonts/DroidSans.woff') format('woff');
+				}
+			}
+			@media screen {
+				@font-face {
+					font-family: 'Inconsolata';
+					font-style: normal;
+					font-weight: normal;
+					src: local('Inconsolata'), url('fonts/Inconsolata.woff') format('woff');
+				}
+			}
+		</style>
+		<link id="prettify-link" href="prettify/prettify.css" type="text/css" rel="stylesheet" />	
+		<link href="css/moon.css" class="theme" rel="stylesheet" /> 
+		<link href="css/sand.css" class="theme" rel="stylesheet" /> 
+		<link href="css/sea_wave.css" class="theme" rel="stylesheet" /> 
+		<link href="css/default.css" class="theme" rel="stylesheet" media="screen" />		
+		
+        <style>
+          .sub-steps {
+            position: relative;
+            height: 600px;
+          }
+          .sub-steps > div {
+            position: absolute;
+            top:0px;            
+            opacity: 0;
+            z-index: 1;
+            width: 100%;
+          }
+          .sub-steps .current {
+            opacity: 1;
+          }
+          .sub-steps .to-build {
+          	z-index: -1;
+          }
+          
+          .slide .counter {
+            left: 10px;
+            bottom: 10px;
+          }
+          
+          /*h2 button {          	
+			float: right;	
+		  }*/
+
+		  .CodeMirror-wrapping {
+		  	background: rgba(0, 255, 0, 0.05)
+		  }
+		  
+		  .file-content {
+		  	position:relative;
+		  }
+		  
+          .file-name {
+            margin: 1px;
+            background-color : white;
+            -webkit-border-bottom-right-radius: 8px;
+            -webkit-border-top-left-radius: 8px;
+          	position: absolute;
+          	padding-top: 3px;
+          	padding-left: 10px;
+          	padding-right: 5px;
+          	padding-bottom: 5px;
+          	right: 0px;
+          	bottom: 0px;
+          	font-size: 22pt;
+          }
+          
+          body {
+            font-size: 26pt;
+          }
+          
+          h2 {
+          	font-size: 26pt;
+          }
+          
+          pre.prettyprint {
+            padding: 10px 20px;
+          }
+          
+          .prettyprint .str { 
+            color: #A31515; 
+          }
+          
+          .file-content pre.prettyprint b * {
+            /*color: green;*/
+            font-weight: bold;
+            
+            color: inherit;
+          }
+          
+          .content-script {
+  			background-color: rgba(0,255,0,0.1);	
+		  }
+		  
+		  .bg-script {
+  			background-color: rgba(0,0,255,0.1);	
+		  }
+		  
+		  .popup-script {
+  			background-color: rgba(255,0,255,0.1);	
+		  }
+		  
+		  .sub-steps .to-build:first-child {
+			opacity: 1;
+			z-index: 0;
+          }
+		  
+		  figure {
+		  	text-align: center;
+		  }
+		  
+		  li {
+		  	list-style-type: disc;
+		  }
+		  
+		  li li {
+		  	list-style-type: circle;
+		  }
+          
+          .file-content pre.prettyprint em * {
+          	color: inherit;
+          }
+          
+          [data-build] > * {
+			-webkit-transition: none;
+		  }
+		  
+		  .sub-steps img {
+		  	-webkit-box-shadow:0 0 25px #fff; 
+		  }
+		  
+		  header {
+			color: #0032AB;
+			text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 5px;			
+		  }
+		  
+		  .presentation #landing-slide h1 {
+		    color: #0032AB;
+		  }
+		  
+		  .buttons {
+		  	position: absolute;
+		  	top: 30px;
+			right: 30px;
+		  }
+		  
+		  button {
+		  	background-color: #F3F3F3;
+			-webkit-border-radius: 7px;
+			padding-bottom: 5px;					
+		  }
+          
+          .slide.transitionSlide h2 {
+          	color: #0032AB;
+			font-size: 50px;
+		  }
+          
+        </style>
+	</head> 
+	<body> 
+	<div class="presentation"> 
+		<div id="presentation-counter">Loading...</div> 
+		<div class="slides">
+ 
+        <div class="slide" id="landing-slide"> 
+			<style> 
+				#landing-slide h1, #landing-slide h2 {
+					color: black;
+				}
+				#landing-slide h1 {
+					letter-spacing: -2px;
+					font-size: 96px;
+				}            
+				#landing-slide h2 {
+					margin-top: -5px;
+					font-size: 60px;
+					letter-spacing: -1px;
+				}
+				#landing-slide .logos {
+					position: absolute;
+					right: 50px;
+					bottom: 20px;
+				}
+				#landing-slide .logo-softeam {
+					position: absolute;
+					display: inline-block;
+					top: 20px;
+					left: 0px;
+					height: 100px;
+					border-bottom: 0px;
+					opacity: .7;
+				}
+				#landing-slide a {
+					position: absolute;
+					left: 30px;
+					bottom: 30px;
+					font-size: 22pt;
+				}
+				
+				@-webkit-keyframes pulse {
+				 0% {
+				   color: gray;
+				 }
+				 100% {
+				   color: black;
+				 }
+				}
+
+				.hint {
+					position: absolute;
+					right: 30px;
+					top: 30px;
+					color: gray;
+					font-size: 16pt;
+					padding : 10px;
+					padding-bottom : 12px;
+					line-height: normal;
+				}
+
+				.current .hint {
+					-webkit-animation-name: pulse;
+					-webkit-animation-duration: 2s;
+					-webkit-animation-direction: alternate;
+					-webkit-animation-timing-function: ease-in-out;
+					-webkit-animation-iteration-count: infinite;
+				}
+
+			</style>
+			<section class="middle">
+				<a class="logo-softeam" href="http://www.softeam.fr/"><img src="images/softeam_logo.png"></a>
+				<span class="hint">Appuyez sur Espace pour avancer</span>
+            	<hgroup> 
+              		<h1>Extensions Chrome</h1>              
+					<h2>&amp; HTML5</h2>					
+            	</hgroup>
+            	<a href="mailto:gildas.lormeau@softeam.fr">gildas.lormeau@softeam.fr</a>
+            	<img class="logos" src="images/logos.png">
+			</section> 
+		</div> 
+ 
+		<div class="slide" id="toc">
+			<header>Extensions Chrome</header> 				
+			<section>
+				<ol>
+					<li>Introduction</li>
+					<li>Intégration dans l'interface du navigateur</li>
+					<li>Architecture</li>
+					<li>Exemple d'extension pas à pas</li>
+					<li>Utilisation de HTML5</li>
+				</ol> 
+			</section>
+        </div>
+        
+		<div class="slide transitionSlide" id="overview-title"> 
+			<section class="middle"> 
+				<h2>Introduction</h2>            
+			</section> 
+		</div>
+        
+		<div class="slide" id="history">
+			<header>Historique</header> 
+			<section>
+				<ul>
+					<li>1999 : bookmarklets</li>
+					<li>2002 : extensions firefox</li>
+					<li>2004 : greasemonkey (userscripts)</li>
+					<li>2009 : projet mozilla jetpack</li>
+					<li>2010 : extensions chrome</li>
+					<li>2011 : extensions opéra et safari</li>
+				</ul>
+			</section>
+		</div>
+        
+		<div class="slide" id="presentation">
+			<header>Extensions Chrome</header> 
+			<section>
+				<ul>
+					<li>Objectif : 
+						<ul>
+							<li>étendre les capacités du navigateur</li>
+							<li>étendre les fonctionnalités d'un site web</li>
+						</ul>
+                	</li>
+					<li>Caractéristiques :
+						<ul>
+							<li>simplicité : intégration dans le navigateur</li>
+							<li>stabilité : processus séparé</li>
+							<li>sécurité : permissions</li>
+						</ul>
+					</li>
+					<li>Délivrée sous forme de fichier zip (extension .crx)</li>
+				</ul>
+			</section>
+		</div>
+		
+		<div class="slide transitionSlide" id="ui-integration-title"> 
+			<section class="middle"> 
+				<h2>Intégration dans le navigateur</h2>            
+			</section> 
+		</div>
+		
+		<div class="slide" id="ui-integration-1">
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Bouton principal : icône</h2>
+				<figure>
+					<img src="images/screenshots/ba_icon.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-2">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Bouton principal : badge</h2>
+				<figure>
+					<img src="images/screenshots/ba_badge.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-3">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Bouton principal : popup</h2>
+				<figure>
+					<img src="images/screenshots/ba_popup.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-4">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Icône contextuelle</h2>
+				<figure>
+					<img src="images/screenshots/pa_icon.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-5">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Icône contextuelle : popup</h2>
+				<figure>
+					<img src="images/screenshots/pa_popup.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-6">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Menu contextuel</h2>
+				<figure>
+					<img src="images/screenshots/context_menu.png">
+				</figure>
+			</section>
+		</div>
+
+		<div class="slide" id="ui-integration-7">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Omnibox</h2>
+				<figure>
+					<img src="images/screenshots/omnibox.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-8">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<h2>Page d'options</h2>
+				<figure>
+					<img src="images/screenshots/options.png">
+				</figure>
+			</section>
+		</div>
+		
+		<div class="slide" id="ui-integration-9">			
+			<header>Intégration dans le navigateur</header>
+			<section>
+				<div data-build class="sub-steps">
+					<div>
+						<h2>Page de remplacement : nouvel onglet</h2>
+						<figure>
+							<img src="images/screenshots/new_tab.png">
+						</figure>
+					</div>
+					<div>					
+						<h2>Page de remplacement : favoris</h2>
+						<figure>
+							<img src="images/screenshots/bookmarks.png">
+						</figure>
+					</div>
+					<div>
+						<h2>Page de remplacement : historique</h2>
+						<figure>
+							<img src="images/screenshots/history.png">
+						</figure>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide transitionSlide" id="architecture-title"> 
+			<section class="middle"> 
+				<h2>Architecture</h2>            
+			</section> 
+		</div>
+		
+		<div class="slide" id="architecture-background-page-1">          
+			<header>Background page</header> 
+			<section>
+				<div data-build class="sub-steps">
+					<div>
+						<h2>&nbsp;</h2>		
+						<figure><img src="images/architecture/archi_450_1.png"></figure>						
+					</div>
+					<div>
+						<h2>&nbsp;</h2>
+						<figure><img src="images/architecture/archi_450_2.png"></figure>				
+					</div>
+					<div>
+						<h2>Extensions installées dans le navigateur</h2>
+						<figure><img src="images/architecture/archi_450_3.png"></figure>
+					</div>
+					<div>
+						<h2>Extension = ressources web + background page</h2>
+						<figure><img src="images/architecture/archi_450_4.png"></figure>						
+					</div>
+				</div>            
+			</section>
+		</div>
+		
+		<div class="slide" id="architecture-background-page-2">          
+			<header>Background page</header> 
+			<section>
+				<ul>
+					<li>page HTML associée à l'extension</li>
+					<li>lancée dès le démarrage du navigateur en arrière plan</li>
+					<li>jamais affichée</li>
+					<li>exécutée dans un processus séparé</li>
+				</ul>
+			</section>
+		</div>	
+		
+		<div class="slide" id="architecture-background-page-3">          
+			<header>Background page</header> 
+			<section>
+				<div data-build class="sub-steps">
+					<div>
+						<h2>chef d'orchestre de l'extension</h2>
+						<figure><img src="images/architecture/archi_450_17.png"></figure>
+					</div>		
+					<div>
+						<h2>contrôle du menu contextuel</h2>
+						<figure><img src="images/architecture/archi_450_12.png"></figure>						
+					</div>
+					<div>
+						<h2>gestion des suggestions de l'omnibox</h2>
+						<figure><img src="images/architecture/archi_450_13.png"></figure>
+					</div>
+					<div>
+						<h2>gestion des onglets et des fenêtres</h2>
+						<figure><img src="images/architecture/archi_450_14.png"></figure>
+					</div>
+					<div>
+						<h2>contrôle du bouton d'action</h2>
+						<figure><img src="images/architecture/archi_450_11_bis.png"></figure>
+					</div>
+					<div>
+						<h2>communication directe avec les pages de popup</h2>
+						<figure><img src="images/architecture/archi_450_11.png"></figure>
+					</div>
+            	</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="architecture-background-page-4">          
+			<header>Background page</header>
+			<section>
+				<h2>Autres permissions :</h2>						
+				<ul>
+					<li>communication avec des serveurs web</li>
+					<li>gestion des marques-pages</li>
+					<li>gestion de l'historique</li>
+					<li>gestion des cookies</li>
+					<li>gestion des extensions installées</li>
+					<li>+ APIs expérimentales ...</li>
+				</ul>	
+			</section>
+		</div>
+
+ 		<div class="slide" id="architecture-content-scripts-1">          
+			<header>Content scripts</header> 
+			<section>
+				<div data-build class="sub-steps">
+					<div>
+						<h2>scripts associés à la page affichée</h2>
+						<figure><img src="images/architecture/archi_450_1.png"></figure>
+					</div>
+					<div>
+						<h2>scripts associés à la page affichée</h2>
+						<figure><img src="images/architecture/archi_450_5.png"></figure>
+					</div>
+					<div>
+						<h2>partagent le DOM de la page</h2>
+						<figure><img src="images/architecture/archi_450_6.png"></figure>
+					</div>
+					<div>
+						<h2>dialoguent avec la background page (messages)</h2>
+						<figure><img src="images/architecture/archi_450_7.png"></figure>
+					</div>					
+					<div>
+						<h2>dialoguent avec la background page (messages)</h2>
+						<figure><img src="images/architecture/archi_450_8.png"></figure>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="architecture-content-scripts-2">          
+			<header>Content scripts</header> 
+			<section>
+				<ul>
+					<li>éxécutés dans le processus de l'extension</li>
+					<li>possèdent leur propre contexte d'exécution :
+						<ul>
+							<li>pas d'accès direct aux variables et fonctions de la page</li>
+						</ul>
+					</li>
+					<li>contexte d'exécution temporaire :
+						<ul>
+							<li>scripts ré-exécutés à chaque chargement d'une page</li>
+						</ul>
+					</li>
+					<li>ne bénéficient pas des permissions de l'extension</li>
+				</ul>
+			</section>
+		</div>				
+
+		<div class="slide" id="architecture-other-pages">
+			<header>Pages complémentaires</header> 
+			<section>
+				<ul>
+					<li>mêmes permissions que la background page</li>              
+					<li>pages prédéfinies :
+						<ul>
+							<li>popup du bouton principal</li>                                               
+							<li>popup de l'icône contextuelle</li>                  
+							<li>page d'options</li>        
+							<li>pages de remplacement <br>(i.e. nouvel onglet, marque-pages, historique)</li>
+						</ul>
+					</li>              
+					<li>page ouverte programmatiquement depuis la background page</li>
+				</ul>
+			</section>
+		</div>
+
+		<div class="slide transitionSlide" id="api-title"> 
+			<section class="middle"> 
+				<h2>Exemple d'extension pas à pas</h2>
+				<h3>en 10 étapes</h3>            
+			</section> 
+		</div>       
+         
+        <div class="slide" id="stub">
+			<header>Squelette de l'extension (1)				
+			</header>
+			<div class="buttons">
+				<button class="next-notes" hidden>Demo</button>
+			</div>
+			<section>
+				<h2>Manifeste d'installation</h2>
+				<ul>
+					<li>fichier JSON</li>
+					<li>contient les données nécessaires à l'installation</li>
+				</ul>
+            	<div class="file-content">
+					<pre>
+{
+    "name" : "Bloc notes",
+    "version" : "1.0",
+    "description" : "Prenez facilement vos notes !",
+    "icons" : 
+        {
+            "16"  : "icon_16.png",
+            "48"  : "icon_48.png", 
+            "128" : "icon_128.png"
+        }
+}</pre>
+					<span class="file-name">manifest.json</span>	
+            	</div>
+			</section>    
+		</div>
+        
+		<div class="slide" id="background-presentation">
+			<header>Background page (2)</header>           
+			<section>
+				<h2>Déclaration</h2>
+				<div class="file-content">
+            		<pre>
+{
+    ...
+    <b>"background_page"</b> : <em>"background.html"</em>
+}</pre>
+            		<span class="file-name">manifest.json</span>
+            	</div>
+            	<div class="file-content">
+					<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Background page&lt;/title&gt;
+    &lt;script src=<em>"background.js"</em>&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+					<span class="file-name">background.html</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="content-scripts-1">
+			<header>Content scripts (2)</header>
+			<section>
+				<h2>Déclaration</h2>
+				<div class="file-content">
+					<pre>
+{
+    ...
+    <b>"content_scripts"</b> : 
+    [
+        {
+            <b>"matches"</b> : [ "http://*/*", "https://*/*" ],
+            <b>"js"</b> : [ <em>"content_script.js"</em> ]
+        }
+    ]
+}</pre>
+					<span class="file-name">manifest.json</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="content-scripts-2">
+			<header>Content scripts (2)				
+			</header>         
+			<div class="buttons">
+				<button class="next-notes" hidden>Demo</button>
+			</div>
+			<section>
+				<h2>Affichage d'une popup de saisie (raccourci Alt+N)</h2>
+				<div class="file-content">
+					<pre class="content-script">
+document.addEventListener(
+  "keyup", 
+  function(event) {
+    var note;
+    if (event.altKey &amp;&amp; event.keyCode == 78) {
+      note = prompt("Saisissez votre note");
+    }
+  }, 
+  false
+);</pre>
+					<span class="file-name">content_script.js</span>
+				</div>				
+			</section>
+        </div>
+     
+		<div class="slide" id="requests-content-api-1">
+			<header>Communication (3)</header>			
+			<section>
+				<h2>Envoi de la note vers la background page</h2>
+				<div class="file-content">
+					<pre class="content-script">
+document.addEventListener(
+  "keyup", 
+  function(event) {
+  ...
+    if (note)
+      <b>chrome.extension.sendRequest(</b>
+        {
+          message : "sendNote",
+          note : note
+        },
+        function(<em>response</em>) {
+          console.log("response status", note, 
+            <em>response</em>.status);
+        }<b>
+      )</b>;
+  ...
+}, false);</pre>
+					<span class="file-name">content_script.js</span>
+				</div>
+			</section>
+        </div>
+        
+		<div class="slide" id="requests-content-api-2">
+			<header>Communication (3)				
+			</header>
+			<div class="buttons">
+				<button class="next-notes">Demo</button>
+			</div>
+			<section>
+				<h2>Réception de la note dans la background page</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+var notes = [];
+
+function addNote(note) {
+  notes.push(note);  
+}
+
+<b>chrome.extension.onRequest.addListener(</b>
+  function(<em>request</em>, sender, <em>sendResponse</em>) {  
+    if (<em>request.message</em> == "sendNote") {
+      addNote(<em>request.note</em>);
+      <em>sendResponse</em>(
+        { status : "OK" }
+      );
+    }
+  }   
+<b>)</b>;</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+        </div>
+ 
+ 		<div class="slide" id="browser-action-api-1">
+			<header>Bouton principal (4)</header>
+			<section>
+				<h2>Déclaration</h2>
+            	<div class="file-content">
+					<pre>
+{
+    ...
+    <b>"browser_action"</b> :
+        {
+            "default_icon"  : "icon_48.png", 
+            "default_title" : "Vous n'avez aucune note",
+            <b>"default_popup"</b> : <em>"popup.html"</em>
+        }
+}</pre>
+					<span class="file-name">manifest.json</span>
+				</div>
+          	</section>
+		</div>
+ 
+ 		<div class="slide" id="browser-action-api-2">
+			<header>Bouton principal : popup (4)</header>
+			<section>            
+				<h2>Contenu</h2>
+				<div class="file-content">
+					<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Notes&lt;/title&gt;
+    &lt;link rel="stylesheet" href="popup.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h3&gt;Notes :&lt;/h3&gt;
+    &lt;ul id=<em>"notes-list"</em>&gt;
+    &lt;/ul&gt;
+    &lt;script src=<em>"popup.js"</em>&gt;&lt;/script&gt;
+  &lt;/body&gt;  
+&lt;/html&gt;</pre>
+					<span class="file-name">popup.html</span>
+				</div>
+			</section>
+		</div>
+        
+        <div class="slide" id="browser-action-api-3">
+			<header>Bouton principal : popup (4)				
+			</header>
+			<div class="buttons"> 
+				<button class="next-notes">Demo</button>
+			</div>
+			<section>            
+				<h2>Affichage des notes</h2>
+				<div class="file-content">
+					<pre class="popup-script">
+var
+  <em>bgPage</em> = <b>chrome.extension.getBackgroundPage()</b>, 
+  listElement = document.getElementById("notes-list");
+
+function refresh() {
+  listElement.innerHTML = "";
+  <em>bgPage.notes</em>.forEach(
+    function(note) {
+      var itemElement = document.createElement("li");
+      itemElement.innerText = note;
+      listElement.appendChild(itemElement);
+    }
+  );
+}
+
+refresh();
+</pre>
+					<span class="file-name">popup.js</span>
+				</div>
+			</section>
+		</div>
+        
+		<div class="slide" id="browser-action-api-4">          
+			<header>Bouton principal : info-bulle (5)</header>
+			<section>
+				<h2>Mise à jour du libellé</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+function addNote(note) {
+  notes.push(note);
+  <em>refreshMainButton</em>();  
+}
+...
+function <em>refreshMainButton</em>() {
+  var title;
+  if (notes.length) {
+    title = "Vous avez " + notes.length + " note" + 
+      (notes.length &gt; 1 ? "s" : "");
+  } else {
+    title = "Vous n'avez aucune note";
+  }
+  <b>chrome.browserAction.setTitle(</b>{
+    <em>title</em> : title 
+  }<b>)</b>;  
+}</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>
+ 	
+ 		<div class="slide" id="browser-action-api-5">
+			<header>Bouton principal : badge (5)				
+			</header>
+			<div class="buttons"> 
+				<button class="next-notes">Demo</button>
+			</div>
+			<section>
+				<h2>Mise à jour du libellé</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+function refreshMainButton() {
+  var title, text;
+  if (notes.length) {
+    ...
+    text = String(notes.length);
+  } else {
+    ...
+    text = "";
+  }
+  ...
+  <b>chrome.browserAction.setBadgeText(</b>{
+    <em>text</em> : text
+  }<b>)</b>;
+  <b>chrome.browserAction.setBadgeBackgroundColor(</b>{
+    <em>color</em> : [ 4, 229, 36, 255 ]
+  }<b>)</b>;
+}</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>
+		
+	
+		<div class="slide" id="context-menu-api-2">
+			<header>Menu contextuel (6)</header>          
+			<section>
+				<h2>Déclaration</h2>
+				<div class="file-content">								
+           			<pre>
+{
+    ...
+    <b>"permissions"</b> : 
+        <em>[
+            "contextMenus"
+        ]</em>
+}</pre>
+					<span class="file-name">manifest.json</span>
+				</div>
+			</section>
+		</div>
+       
+		<div class="slide" id="context-menu-api-3">
+			<header>Menu contextuel (6)				
+			</header>
+			<div class="buttons"> 
+				<button class="next-notes">Demo</button>
+			</div>
+			<section>
+				<h2>Création d'une entrée</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+<b>chrome.contextMenus.create(</b>
+  {
+    <em>title</em> : "Ajouter dans les notes",
+    <em>contexts</em> : 
+    [ 
+      "selection" 
+    ],
+    <em>onclick</em> : function(<em>info</em>, tab) {
+      addNote(<em>info.selectionText</em>);
+    }
+  }<b>
+)</b>;
+</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>	
+		
+		<div class="slide" id="omnibox-api-1">
+			<header>Omnibox (7)</header>
+			<section>
+				<h2>Déclaration</h2>
+				<div class="file-content">
+					<pre>
+{
+    ...
+    <b>"omnibox"</b> : 
+        { 
+            <b>"keyword"</b> : <em>"note"</em> 
+        }
+}</pre>
+					<span class="file-name">manifest.json</span>
+				</div>
+				<h2>Suggestion par défaut</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+<b>chrome.omnibox.setDefaultSuggestion(</b>
+  {
+    <em>description</em>: "cherchez une note"
+  }<b>
+)</b>;</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>          
+		</div> 
+      
+		<div class="slide" id="omnibox-api-2">
+			<header>Omnibox (7)				
+			</header>
+			<div class="buttons"> 
+				<button class="next-notes">Demo</button>
+			</div>
+			<section>
+				<h2>Suggestion en cours de saisie</h2>
+				<div class="file-content">
+					<pre class="bg-script" >
+...
+<b>chrome.omnibox.onInputChanged.addListener(</b>
+  function(<em>text</em>, <em>suggestCallback</em>) {
+    var <em>suggestions</em> = [];
+    notes.forEach(
+      function(note) {
+        if (note.toLowerCase().indexOf(<em>text</em>.toLowerCase()) 
+            != -1)
+          <em>suggestions</em>.push({
+            content : note,
+            description : note.replace(/[&lt;&gt;]/g, "")
+          });
+      }
+    );
+    <em>suggestCallback</em>(<em>suggestions</em>);
+  }
+<b>)</b>;</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>
+        
+		<div class="slide transitionSlide" id="html5"> 
+			<section class="middle"> 
+				<h2>Utilisation de HTML5</h2>				
+			</section> 
+		</div>
+        
+		<div class="slide" id="html5-api-1">
+        	<header>Notes : sauvegarde (8)</header>
+			<section>
+				<h2>localStorage.setItem et JSON.stringify</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+function addNote(note) {
+  notes.push(note);
+  <em>saveNotes()</em>;
+  refreshMainButton();
+}
+
+function <em>saveNotes</em>() {
+  <b>localStorage.setItem(
+    </b>"notes", <b>
+    JSON.stringify(</b>notes<b>)
+  )</b>;  
+}</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-2">
+        	<header>Notes : chargement (8)        		        	
+        	</header>
+        	<div class="buttons"> 
+        		<button class="next-notes">Demo</button>
+        		<button class="disable-notes">Désactiver</button> 
+        		<button class="enable-notes">Activer</button>
+        	</div>
+			<section>
+				<h2>localStorage.getItem et JSON.parse</h2>
+				<div class="file-content">
+					<pre class="bg-script">
+var notes;
+
+...
+function loadNotes() {
+  var storedNotes = <b>localStorage.getItem(</b>"notes"<b>)</b>;
+  notes = storedNotes ? <b>JSON.parse(</b>storedNotes<b>)</b> : [];
+  refreshMainButton();
+}
+
+...
+loadNotes();</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-3">
+        	<header>Notes : édition (9)</header>
+			<section>
+				<h2>attributs hidden</h2>
+				<div class="file-content">
+					<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  ...
+  &lt;body&gt;
+    ...
+    &lt;div class="links"&gt;
+      &lt;a href="#" id=<em>"edit-link"</em>&gt;editer&lt;/a&gt;
+      &lt;a href="#" id=<em>"save-link"</em> <b>hidden</b>&gt;sauver&lt;/a&gt;
+      &lt;a href="#" id=<em>"cancel-link"</em> <b>hidden</b>&gt;annuler&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  ...
+&lt;/html&gt;</pre>
+					<span class="file-name">popup.html</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-4">
+        	<header>Notes : édition (9)</header>
+			<section>
+				<h2>attributs hidden et contenteditable</h2>				
+				<div class="file-content">
+					<pre class="popup-script">
+var ...
+  <em>editLink</em>   = document.getElementById("edit-link"),
+  <em>saveLink</em>   = document.getElementById("save-link"), 
+  <em>cancelLink</em> = document.getElementById("cancel-link"); 
+
+function setEditMode(mode) {
+  listElement.<b>contentEditable</b> = mode;
+  <em>editLink</em>.<b>hidden</b> = mode;
+  <em>saveLink</em>.<b>hidden</b> = <em>cancelLink</em>.<b>hidden</b> = !mode;
+  listElement.focus();
+}
+</pre>
+					<span class="file-name">popup.js</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-5">
+        	<header>Notes : édition (9)</header>
+			<section>
+				<div class="file-content">
+					<pre class="popup-script">
+var ... 
+  lastContent;
+...
+<em>editLink</em>.addEventListener("click", 
+  function() {
+    if (listElement.children.length) {
+      lastContent = listElement.innerHTML;
+      <em>setEditMode</em>(true);
+    }
+  }, false  
+);
+
+<em>cancelLink</em>.addEventListener("click", 
+  function() {
+    listElement.innerHTML = lastContent;
+    <em>setEditMode</em>(false);
+  }, false
+);
+</pre>
+					<span class="file-name">popup.js</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-6">
+        	<header>Notes : édition (9)        		
+        	</header>
+        	<div class="buttons">
+        		<button class="next-notes">Demo</button>
+        		<button class="disable-notes">Désactiver</button>
+        		<button class="enable-notes">Activer</button>
+       		</div>
+			<section>
+				<div class="file-content">
+					<pre class="popup-script">
+...
+<em>saveLink</em>.addEventListener("click", 
+  function() {
+    <em>bgPage.setNotes</em>(
+      Array.prototype.map.call(listElement.children,           
+        function(itemElement) {
+          return itemElement.innerText;
+        }
+      )
+    );
+    <em>setEditMode</em>(false);
+  }, false);
+</pre>
+					<span class="file-name">popup.js</span>
+				</div>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+function <em>setNotes</em>(newNotes) {
+  notes = newNotes;
+  saveNotes();
+  refreshMainButton();
+}</pre>
+					<span class="file-name">background.js</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-7">
+        	<header>Notes : export (10)</header>        	
+			<section>
+				<div class="file-content">
+					<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  ...
+  &lt;body&gt;
+      ...
+      &lt;a href="#" id=<em>"export-link"</em>&gt;exporter&lt;/a&gt;    
+  &lt;/body&gt;
+  ...
+&lt;/html&gt;</pre>
+					<span class="file-name">popup.html</span>
+				</div>
+			</section>
+		</div>
+		
+		<div class="slide" id="html5-api-8">
+        	<header>Notes : export (10)        		
+        	</header>
+        	<div class="buttons"> 
+       			<button class="next-notes">Demo</button>
+       		</div>
+			<section>
+				<h2>API File et FileWriter</h2>
+				<div class="file-content">
+					<pre class="popup-script">
+var ...
+  <em>exportLink</em> = document.getElementById("export-link");
+...
+<em>exportLink</em>.addEventListener(
+  "click", <em>bgPage.exportNotes</em>, false
+);</pre>
+					<span class="file-name">popup.js</span>
+				</div>
+				<div class="file-content">
+					<pre class="bg-script">
+...
+function <em>exportNotes</em>() {
+  var <em>blobBuilder</em> = new <b>WebKitBlobBuilder()</b>;	
+  <em>blobBuilder</em>.append(notes.join("\r\n"));
+  open(
+    <b>webkitURL.createObjectURL</b>(
+      <em>blobBuilder</em>.getBlob()
+    )
+  );	
+}</pre>
+					<span class="file-name">background.js</span>
+				</div>		
+			</section>
+		</div>
+ 
+ 		<div class="slide" id="reference-api">
+ 			<style>
+	 			#reference-api a {
+	 				font-size: 17pt;
+	 			}
+ 			</style>
+ 			<header>Références &amp; adresses</header>
+			<section>				
+				<ul>
+					<li>Manuel de référence<br><a href="http://code.google.com/chrome/extensions/getstarted.html">http://code.google.com/chrome/extensions/getstarted.html</a></li>
+					<li>Liste de discussion des extensions chromium<br><a href="http://groups.google.com/a/chromium.org/group/chromium-extensions">http://groups.google.com/a/chromium.org/group/chromium-extensions</a></li>
+					<li>Web store<br><a href="https://chrome.google.com/webstore">https://chrome.google.com/webstore</a></li>
+					<li>Ressources HTML5<br><a href="http://www.html5rocks.com/en/resources.html">http://www.html5rocks.com/en/resources.html</a></li>					
+				</ul>           
+			</section>
+		</div>
+		
+		<div class="slide transitionSlide" id="questions"> 
+			<section class="middle"> 
+				<h2>Questions ?</h2>		
+			</section> 
+		</div>
+    
+		</div> <!-- slides --> 
+ 
+	</div> <!-- presentation --> 
+ 	
+	<script src="prettify/prettify.js" defer></script>
+ 
+	<script src="SlideShow.js" defer></script>
+         
+    <!--[if lt IE 9]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+    </script>
+    <script>CFInstall.check({ mode: "overlay" });</script>
+    <![endif]-->    
+	</body> 
+</html>
